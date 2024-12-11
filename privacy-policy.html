@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سياسة الخصوصية - مجتهد</title>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0c73e9;
+            --primary-light: #4a90e2;
+            --secondary: #2ecc71;
+            --text: #2c3e50;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+            --background: #f8fafc;
+            --border: #e1e8ed;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--background);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(12, 115, 233, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.1;
+        }
+
+        .privacy-header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            position: relative;
+            font-weight: 900;
+        }
+
+        .privacy-header p {
+            font-size: 1.2em;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .privacy-content {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(12, 115, 233, 0.1);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            position: relative;
+            padding-right: 20px;
+            font-weight: 700;
+        }
+
+        .section h2::before {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 25px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .section ul {
+            margin-right: 20px;
+            margin-bottom: 15px;
+            list-style: none;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-right: 25px;
+            color: var(--text);
+        }
+
+        .section li::before {
+            content: '•';
+            color: var(--primary);
+            position: absolute;
+            right: 0;
+            font-size: 1.5em;
+            line-height: 1;
+        }
+
+        .update-date {
+            text-align: center;
+            margin-top: 30px;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        .back-to-home {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(12, 115, 233, 0.2);
+        }
+
+        .back-to-home:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(12, 115, 233, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px 15px;
+            }
+            
+            .privacy-header {
+                padding: 30px 20px;
+            }
+
+            .privacy-header h1 {
+                font-size: 2em;
+            }
+
+            .section h2 {
+                font-size: 1.5em;
+            }
+
+            .privacy-content {
+                padding: 25px;
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .section {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="privacy-header">
+            <h1>سياسة الخصوصية</h1>
+            <p>نحن نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية</p>
+        </header>
+
+        <main class="privacy-content">
+            <div class="section">
+                <h2>مقدمة</h2>
+                <p>نحن في مجتهد نلتزم بحماية خصوصية مستخدمينا الكرام. نؤمن بأن خصوصية معلوماتك الشخصية أمر في غاية الأهمية، ونحن ملتزمون بحمايتها بكل شفافية ومهنية.</p>
+            </div>
+
+            <div class="section">
+                <h2>المعلومات التي نجمعها</h2>
+                <p>نحن نجمع المعلومات التالية لتحسين تجربتك التعليمية:</p>
+                <ul>
+                    <li>معلومات الحساب الشخصي (الاسم، البريد الإلكتروني)</li>
+                    <li>بيانات التقدم في الدراسة والاختبارات</li>
+                    <li>إحصائيات الأداء والنتائج</li>
+                    <li>تفضيلات التعلم الشخصية</li>
+                    <li>ملاحظات وتعليقات المستخدم</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>كيف نستخدم معلوماتك</h2>
+                <p>نستخدم المعلومات التي نجمعها لتقديم تجربة تعليمية متميزة:</p>
+                <ul>
+                    <li>تخصيص المحتوى التعليمي حسب مستواك</li>
+                    <li>تحليل أدائك وتقديم توصيات مخصصة</li>
+                    <li>تحسين محتوى التطبيق وواجهة المستخدم</li>
+                    <li>التواصل معك بخصوص تحديثات وتحسينات الخدمة</li>
+                    <li>تقديم الدعم الفني والمساعدة عند الحاجة</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>حماية معلوماتك</h2>
+                <p>نتخذ إجراءات أمنية متقدمة لحماية معلوماتك:</p>
+                <ul>
+                    <li>تشفير البيانات باستخدام أحدث التقنيات</li>
+                    <li>مراقبة مستمرة لأنظمة الحماية</li>
+                    <li>تحديثات أمنية دورية</li>
+                    <li>صلاحيات وصول محدودة للموظفين</li>
+                    <li>نسخ احتياطية منتظمة للبيانات</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>حقوقك</h2>
+                <p>كمستخدم لتطبيق مجتهد، لديك الحقوق التالية:</p>
+                <ul>
+                    <li>الوصول إلى بياناتك الشخصية وتحديثها</li>
+                    <li>طلب حذف حسابك وبياناتك</li>
+                    <li>تصدير نسخة من بياناتك التعليمية</li>
+                    <li>تعديل إعدادات الخصوصية</li>
+                    <li>إلغاء الاشتراك في الرسائل الإخبارية</li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h2>تواصل معنا</h2>
+                <p>نحن هنا للإجابة على استفساراتك:</p>
+                <ul>
+                    <li>البريد الإلكتروني: support@mujtahid.com</li>
+                    <li>قسم المساعدة في التطبيق</li>
+                    <li>نموذج التواصل على موقعنا</li>
+                </ul>
+            </div>
+
+            <div class="update-date">
+                <p>آخر تحديث: 11 ديسمبر 2024</p>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="index.html" class="back-to-home">العودة للصفحة الرئيسية</a>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
