@@ -1,3 +1,9 @@
 User-agent: *
 Allow: /
+Allow: /images/
+Allow: /privacy-policy.html
+
 Sitemap: https://mogtahed.netlify.app/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 10
