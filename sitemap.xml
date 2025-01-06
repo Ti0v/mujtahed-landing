@@ -2,21 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- الصفحة الرئيسية -->
     <url>
         <loc>https://mogtahed.netlify.app/</loc>
-        <lastmod>2025-01-03</lastmod>
-        <changefreq>weekly</changefreq>
+        <lastmod>2025-01-06</lastmod>
+        <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://mogtahed.netlify.app/images/logo.png</image:loc>
+            <image:loc>https://mogtahed.netlify.app/images/logo1.png</image:loc>
             <image:title>شعار تطبيق مجتهد</image:title>
+            <image:caption>تطبيق مجتهد - الحل الأمثل لاختبارات قياس</image:caption>
         </image:image>
     </url>
+
+    <!-- صفحة سياسة الخصوصية -->
     <url>
         <loc>https://mogtahed.netlify.app/privacy-policy.html</loc>
-        <lastmod>2025-01-03</lastmod>
+        <lastmod>2025-01-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>

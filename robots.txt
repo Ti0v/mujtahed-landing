@@ -1,9 +1,26 @@
+# موقع تطبيق مجتهد - توجيهات محركات البحث
 User-agent: *
 Allow: /
 Allow: /images/
 Allow: /privacy-policy.html
-
-Sitemap: https://mogtahed.netlify.app/sitemap.xml
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
 
 # Optimize crawling
-Crawl-delay: 10
+Crawl-delay: 5
+
+# Sitemaps
+Sitemap: https://mogtahed.netlify.app/sitemap.xml
+
+# Additional crawlers
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /images/
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
