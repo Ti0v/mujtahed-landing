@@ -520,6 +520,74 @@
                 icon.classList.toggle('fa-chevron-up');
             });
         });
+
+        // Twitter conversion tracking event code
+        document.querySelectorAll('.download-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                // تحديد نوع التطبيق
+                const isIOS = this.href.includes('apple');
+                const appType = isIOS ? 'iOS' : 'Android';
+                
+                // إرسال حدث إلى Twitter
+                twq('event', 'tw-pa23z-pa240', {
+                    value: 1.00,
+                    currency: 'SAR',
+                    contents: [{
+                        'content_id': isIOS ? 'ios_app_download' : 'android_app_download',
+                        'content_type': 'app_download',
+                        'platform': appType
+                    }],
+                    conversion_id: `${Date.now()}_${appType}`,
+                    // إضافة معلومات إضافية للتتبع
+                    download_platform: appType,
+                    event_time: new Date().toISOString()
+                });
+
+                // طباعة معلومات التتبع في وحدة التحكم للتأكد من عملها
+                console.log(`تم النقر على تحميل ${appType}`);
+            });
+        });
+
+        // تتبع النقرات على أزرار التحميل
+        document.querySelectorAll('.download-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const isIOS = this.href.includes('apple');
+                const platform = isIOS ? 'iOS' : 'Android';
+                const appName = 'مجتهد';
+                const priceValue = 0.00; // مجاني حالياً
+                
+                // إرسال بيانات التحويل إلى تويتر
+                twq('event', 'tw-pa23z-pa240', {
+                    // معلومات التحويل الأساسية
+                    value: priceValue,
+                    currency: 'SAR',
+                    
+                    // معلومات المحتوى
+                    contents: [{
+                        content_type: 'app_download',
+                        content_id: isIOS ? 'ios_app' : 'android_app',
+                        content_name: `${appName} - ${platform}`,
+                        content_price: priceValue,
+                        num_items: 1
+                    }],
+                    
+                    // معرف فريد للتحويل
+                    conversion_id: `${Date.now()}_${platform}`,
+                    
+                    // معلومات إحصائية إضافية
+                    download_platform: platform,
+                    app_name: appName,
+                    event_time: new Date().toISOString()
+                });
+
+                // عرض معلومات التتبع في وحدة التحكم
+                console.log(`تم تسجيل نقرة تحميل:
+                    - المنصة: ${platform}
+                    - التاريخ: ${new Date().toLocaleString('ar-SA')}
+                    - معرف التحويل: ${Date.now()}_${platform}
+                `);
+            });
+        });
     </script>
 </body>
 </html>
