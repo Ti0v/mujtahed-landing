@@ -87,43 +87,39 @@ img {
 
 .hero-content {
     display: grid;
-    grid-template-columns: 45% 45%;
-    gap: 10%;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
     align-items: center;
-    justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hero-text {
-    animation: fadeInUp 1s ease;
+    animation: fadeIn 1s ease;
 }
 
 .hero-text h1 {
-    font-size: 4.5rem;
-    font-weight: 900;
-    background: var(--gradient-primary);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 3.5rem;
     margin-bottom: 20px;
-    line-height: 1.1;
-    letter-spacing: -1px;
+    position: relative;
+    display: inline-block;
 }
 
 .hero-text h2 {
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 2rem;
     color: var(--text);
     margin-bottom: 25px;
-    line-height: 1.3;
 }
 
 .hero-text p {
     font-size: 1.2rem;
     color: var(--text-light);
-    margin-bottom: 40px;
     line-height: 1.8;
+    margin-bottom: 40px;
     max-width: 90%;
 }
 
@@ -131,17 +127,18 @@ img {
 .download-buttons {
     display: flex;
     gap: 20px;
-    margin-bottom: 60px;
+    margin: 40px 0;
 }
 
 .download-btn {
     display: flex;
     align-items: center;
-    padding: 16px 30px;
-    border-radius: 16px;
+    padding: 16px 32px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    gap: 12px;
     color: var(--white);
     font-weight: 700;
-    transition: all 0.4s ease;
     box-shadow: var(--shadow-md);
     position: relative;
     overflow: hidden;
@@ -176,8 +173,8 @@ img {
 }
 
 .download-btn:hover {
-    transform: translateY(-6px);
-    box-shadow: var(--shadow-glow);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .download-btn i {
@@ -204,16 +201,17 @@ img {
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
+    margin-top: 40px;
 }
 
 .stat-item {
     text-align: center;
-    background: var(--white);
-    border-radius: 20px;
-    padding: 30px 20px;
-    box-shadow: var(--shadow-md);
-    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     transform: translateY(0);
@@ -232,8 +230,8 @@ img {
 }
 
 .stat-item:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(12, 115, 233, 0.2);
 }
 
 .stat-item:hover::after {
@@ -241,10 +239,10 @@ img {
 }
 
 .stat-value {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 900;
     color: var(--primary);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     position: relative;
     display: inline-block;
 }
@@ -263,9 +261,9 @@ img {
 }
 
 .stat-label {
+    font-size: 1.1rem;
     color: var(--text);
-    font-weight: 700;
-    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 /* App Image - تصميم محسن */
@@ -276,7 +274,7 @@ img {
 
 .app-showcase {
     position: relative;
-    animation: fadeInRight 1s ease;
+    animation: float 6s ease-in-out infinite;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -462,7 +460,7 @@ img {
     height: 45px;
     border-radius: 50%;
     background: var(--background);
-    color: var(--primary);
+    color: var (--primary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -511,12 +509,23 @@ img {
     }
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 @keyframes float {
     0%, 100% {
-        transform: translateY(0) rotate(15deg);
+        transform: translateY(0);
     }
     50% {
-        transform: translateY(-10px) rotate(15deg);
+        transform: translateY(-10px);
     }
 }
 
@@ -529,6 +538,15 @@ img {
     .hero-text h2 {
         font-size: 2.2rem;
     }
+
+    .hero-content {
+        gap: 40px;
+        padding: 0 40px;
+    }
+    
+    .stat-value {
+        font-size: 2.2rem;
+    }
 }
 
 @media (max-width: 992px) {
@@ -537,6 +555,7 @@ img {
         gap: 40px;
         max-width: 600px;
         text-align: center;
+        padding: 0 20px;
     }
     
     .hero-text h1 {
@@ -559,6 +578,8 @@ img {
     .stats {
         max-width: 600px;
         margin: 0 auto;
+        justify-content: center;
+        gap: 15px;
     }
     
     .hero-image {
@@ -575,6 +596,17 @@ img {
         min-height: auto;
         justify-content: center;
         margin-top: 40px;
+        order: 2;
+        margin: 40px auto;
+        max-width: 500px;
+    }
+
+    .hero-text {
+        order: 1;
+    }
+
+    .stat-item {
+        padding: 20px;
     }
 }
 
@@ -617,8 +649,8 @@ img {
     }
     
     .stats {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
     }
     
     .app-badge {
@@ -649,6 +681,14 @@ img {
     .footer-logo img {
         height: 40px;
         margin-bottom: 15px;
+    }
+
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    .stat-label {
+        font-size: 1rem;
     }
 }
 
@@ -688,10 +728,20 @@ img {
     }
     
     .stat-value {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
     }
     
     .stat-label {
         font-size: 1rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 30px auto;
+    }
+
+    .stat-item {
+        padding: 16px;
     }
 }
