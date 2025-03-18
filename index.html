@@ -147,6 +147,16 @@
     <!-- Enhanced Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="apple-touch-icon" href="images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="images/favicon/safari-pinned-tab.svg" color="#0c73e9">
+    <meta name="msapplication-TileColor" content="#0c73e9">
+    <meta name="theme-color" content="#0c73e9">
+
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
     
@@ -160,8 +170,20 @@
     <!-- End Twitter conversion tracking base code -->
 </head>
 <body>
-    <!-- لقد تم حذف الـ Navbar حسب طلبك -->
-    
+    <!-- إضافة Header جديد -->
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="images/logo1.png" alt="مجتهد" class="header-logo">
+                </div>
+                <div class="header-actions">
+                    <a href="#download" class="header-cta">حمل التطبيق مجاناً</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <main>
         <section class="hero">
             <div class="logo">
@@ -201,7 +223,7 @@
                         </a>
                     </div>
                     
-                    <!-- إصلاح نسبة الرضا -->
+                    <!-- تصحيح نسبة الرضا -->
                     <div class="stats">
                         <div class="stat-item">
                             <div class="stat-value">10K+</div>
@@ -295,6 +317,102 @@
                         </ul>
                         <div class="coming-soon-badge">قريباً</div>
                     </article>
+                </div>
+            </div>
+        </section>
+        
+        <!-- تحديث قسم عرض صور التطبيق -->
+        <section class="app-screenshots" id="screenshots">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">نظرة داخل التطبيق</h2>
+                    <p class="section-subtitle">تجربة مستخدم متميزة وتصميم عصري</p>
+                </div>
+                <div class="screenshots-grid">
+                    <div class="screenshot-card">
+                        <img src="images/home.PNG" alt="الشاشة الرئيسية - اختيار نوع الاختبار" class="screenshot-image">
+                        <div class="screenshot-overlay">
+                            <h3>الشاشة الرئيسية</h3>
+                            <p>اختر نوع الاختبار الذي تريد التدرب عليه</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <img src="images/quiz.PNG" alt="واجهة الاختبار - أسئلة تفاعلية" class="screenshot-image">
+                        <div class="screenshot-overlay">
+                            <h3>واجهة الاختبار</h3>
+                            <p>أسئلة تفاعلية مع شرح تفصيلي</p>
+                        </div>
+                    </div>
+                    <div class="screenshot-card">
+                        <img src="images/leaderborard.PNG" alt="واجهة الاختبار - أسئلة تفاعلية" class="screenshot-image">
+                        <div class="screenshot-overlay">
+                            <h3>واجهة التصنيف العام</h3>
+                            <!-- <p>أسئلة تفاعلية مع شرح تفص -->
+                    <!-- <div class="screenshot-card"></div>
+                        <img src="images/explain.PNG" alt="قسم التدريب والمراجعة" class="screenshot-image">
+                        <div class="screenshot-overlay">
+                            <h3>قسم التدريب</h3>
+                            <p>تدرب على أسئلة محددة حسب المهارة</p>
+                        </div> -->
+                    </div>
+                    <!-- <div class="screenshot-card">
+                        <img src="images/explain.PNG" alt="المراجعة والشرح التفصيلي" class="screenshot-image">
+                        <div class="screenshot-overlay">
+                            <h3>الشرح التفصيلي</h3>
+                            <p>شرح خطوات الحل بالتفصيل</p>
+                        </div> -->
+                
+                </div>
+            </div>
+        </section>
+
+        <!-- إضافة قسم جديد للمراجعات -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">آراء الطلاب</h2>
+                    <p class="section-subtitle">ماذا يقول طلابنا عن تجربتهم مع تطبيق مجتهد</p>
+                </div>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">ساعدني التطبيق كثيراً في التحضير لاختبار القدرات. النماذج المحاكية دقيقة جداً والشرح ممتاز!</p>
+                        <div class="review-author">أحمد س.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">أفضل تطبيق للتحضير لاختبارات قياس. شرح تفصيلي ونماذج محاكية 100%</p>
+                        <div class="review-author">محمد ع.</div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-rating">★★★★★</div>
+                        <p class="review-text">تطبيق رائع! ساعدني في رفع درجاتي في التحصيلي بشكل كبير</p>
+                        <div class="review-author">سارة م.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- إضافة قسم الأسئلة الشائعة -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">الأسئلة الشائعة</h2>
+                    <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعاً</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>كيف يمكنني البدء في استخدام التطبيق؟</h3>
+                        <p>قم بتحميل التطبيق من متجر التطبيقات وابدأ التدرب مجاناً على آلاف الأسئلة المحلولة.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>هل التطبيق مجاني بالكامل؟</h3>
+                        <p>نعم، التطبيق مجاني 100% مع إمكانية الوصول لجميع المحتوى التعليمي.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>كم عدد النماذج المتوفرة؟</h3>
+                        <p>يوفر التطبيق أكثر من 50 نموذجاً محاكياً لجميع اختبارات قياس.</p>
+                    </div>
                 </div>
             </div>
         </section>
