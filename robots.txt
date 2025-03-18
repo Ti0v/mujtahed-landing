@@ -1,26 +1,28 @@
-# موقع تطبيق مجتهد - توجيهات محركات البحث
+# محاكي اختبارات قياس - مجتهد
 User-agent: *
 Allow: /
+Allow: /simulator/
+Allow: /simulator/qudrat/
+Allow: /simulator/tahsili/
+Allow: /simulator/cognitive/
+Allow: /simulator/step/
+Allow: /mock-test/
+Allow: /practice/
 
-Sitemap: https://mujtahidacademy.com/sitemap.xml
-
-# Block sensitive directories
-Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /private/
-
-# Optimize crawling
-Crawl-delay: 5
-
-# Additional crawlers
+# محاكي قياس
 User-agent: Googlebot
 Allow: /
+Allow: /simulator/*
 Crawl-delay: 1
-
-User-agent: Googlebot-Image
-Allow: /images/
 
 User-agent: Bingbot
 Allow: /
+Allow: /simulator/*
 Crawl-delay: 1
+
+# Block non-public
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+Sitemap: https://mujtahidacademy.com/sitemap.xml
