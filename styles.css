@@ -69,7 +69,10 @@ img {
 /* Hero Section - تحديث */
 .hero {
     min-height: 100vh;
-    padding: 80px 0;
+    padding: 120px 0 60px; /* زيادة padding-top */
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* تحسين السكرول على iOS */
     background: var(--background);
     position: relative;
     overflow: hidden;
@@ -156,6 +159,16 @@ img {
     margin: 40px 0;
 }
 
+/* تحسين أزرار التحميل */
+.download-buttons {
+    display: flex;
+    gap: 20px;
+    margin: 40px auto;
+    justify-content: center;
+    flex-wrap: wrap; /* إضافة خاصية الالتفاف */
+    max-width: 100%; /* تحديد العرض الأقصى */
+}
+
 .download-btn {
     display: flex;
     align-items: center;
@@ -171,6 +184,13 @@ img {
     position: relative;
     overflow: hidden;
     z-index: 1;
+}
+
+.download-btn {
+    flex: 1;
+    min-width: 200px; /* الحد الأدنى للعرض */
+    max-width: 280px; /* الحد الأقصى للعرض */
+    padding: 15px 25px;
 }
 
 .download-btn::before {
@@ -705,6 +725,21 @@ img {
     .stat-item {
         padding: 20px;
     }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-top: 60px;
+    }
+    
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -791,6 +826,54 @@ img {
     .stat-item {
         min-height: 100px;
     }
+
+    .hero {
+        padding-top: 100px;
+    }
+
+    .main-header {
+        padding: 10px 0;
+    }
+    
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .screenshot-card {
+        aspect-ratio: 9/19;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        padding: 15px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .download-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .download-btn {
+        width: 100%;
+        min-width: unset;
+        max-width: 100%;
+    }
+    
+    .download-btn i {
+        font-size: 2rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -844,6 +927,50 @@ img {
 
     .stat-item {
         padding: 16px;
+    }
+
+    .screenshots-grid {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+        margin: 20px auto;
+    }
+
+    .screenshot-card {
+        aspect-ratio: 9/16;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .download-buttons {
+        padding: 0 15px;
+    }
+
+    .stats {
+        padding: 0 15px;
+    }
+
+    .main-header .container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 360px) {
+    .download-btn {
+        padding: 12px 20px;
+    }
+    
+    .download-btn i {
+        font-size: 1.8rem;
+    }
+    
+    .download-btn small {
+        font-size: 0.75rem;
+    }
+    
+    .download-btn strong {
+        font-size: 1rem;
     }
 }
 
@@ -1442,5 +1569,126 @@ img {
         grid-template-columns: 1fr;
         max-width: 300px;
         margin: 30px auto;
+    }
+}
+
+/* تحسين الريسبونسف للشاشات المتوسطة */
+@media (max-width: 992px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 80px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .screenshots-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* تحسين الريسبونسف للموبايل */
+@media (max-width: 576px) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 50px;
+    }
+    
+    .hero-text h1 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .features-grid,
+    .screenshots-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .download-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .stat-item {
+        padding: 15px;
+        min-height: auto;
+    }
+}
+
+/* تحسين للشاشات الصغيرة جداً */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+/* حل مشكلة النصوص الطويلة */
+@media (max-width: 768px) {
+    .review-text,
+    .feature-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+}
+
+/* تحسين العرض على الأيفون */
+.hero {
+    min-height: 100vh;
+    padding: 120px 0 60px; /* زيادة padding-top */
+    height: auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; /* تحسين السكرول على iOS */
+}
+
+@media screen and (max-width: 768px) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 40px;
+    }
+
+    .hero-content {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    
+    /* تحسين حجم العناصر */
+    .hero-text h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .app-preview {
+        max-width: 280px;
+        margin: 20px auto;
+    }
+}
+
+/* تحسين خاص للأيفون */
+@supports (-webkit-touch-callout: none) {
+    .hero {
+        min-height: -webkit-fill-available;
+    }
+    
+    .hero-content {
+        padding-bottom: 50px;
     }
 }
