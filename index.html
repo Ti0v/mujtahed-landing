@@ -240,6 +240,52 @@
             });
         });
     </script>
+
+    <!-- تحديث الـ style في head -->
+    <style>
+        html {
+            scroll-behavior: auto !important; /* إزالة السلوك الناعم للسكرول */
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        body {
+            overflow-y: auto;
+            overscroll-behavior-y: none; /* منع تأثير الارتداد */
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+
+        /* تبسيط الأنيميشن */
+        .stat-item {
+            opacity: 0;
+            transform: none !important;
+            transition: opacity 0.5s ease-out;
+            will-change: opacity;
+        }
+
+        .stat-item.visible {
+            opacity: 1;
+        }
+
+        /* إزالة التأثيرات التي تؤثر على الأداء */
+        .app-showcase {
+            transform: none !important;
+            will-change: auto;
+        }
+
+        .image-glow {
+            display: none;
+        }
+
+        /* تثبيت العناصر المتحركة */
+        .features-grid,
+        .screenshots-grid,
+        .reviews-grid {
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+    </style>
 </head>
 <body>
     <!-- تعديل الهيدر -->
@@ -304,7 +350,8 @@
                             <div class="stat-label">طالب مستفيد</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">95%</                            <div class="stat-label">نسبة الرضا</div>
+                            <div class="stat-value">95%</div>
+                            <div class="stat-label">نسبة الرضا</div>
                         </div>
                     </div>
                 </div>
@@ -595,6 +642,129 @@
         // Check on load and scroll
         window.addEventListener('load', animateStatsIfVisible);
         window.addEventListener('scroll', animateStatsIfVisible);
+
+        // تحسين كود الأنيميشن
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                    observer.unobserve(entry.target); // إلغاء المراقبة بعد التنشيط
+                }
+            });
+        }, observerOptions);
+
+        // مراقبة عناصر الإحصائيات
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.stat-item');
+            stats.forEach(stat => observer.observe(stat));
+            
+            // إزالة أي event listeners قد تؤثر على السكرول
+            window.removeEventListener('scroll', animateStatsIfVisible);
+        });
+
+        // تحسين أداء السكرول في الأجهزة المحمولة
+        let touchStartY = 0;
+        document.addEventListener('touchstart', (e) => {
+            touchStartY = e.touches[0].clientY;
+        }, { passive: true });
+
+        document.addEventListener('touchmove', (e) => {
+            const touchY = e.touches[0].clientY;
+            const scrolled = touchStartY - touchY;
+            
+            if (Math.abs(scrolled) > 5) {
+                e.stopPropagation();
+            }
+        }, { passive: true });
+    </script>
+
+    <!-- تحديث JavaScript في نهاية body -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // إزالة جميع event listeners القديمة
+            window.removeEventListener('scroll', animateStatsIfVisible);
+            
+            // استخدام Intersection Observer للأنيميشن
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '50px'
+            });
+
+            // تطبيق المراقبة على العناصر
+            document.querySelectorAll('.stat-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            // تحسين أداء السكرول للموبايل
+            let isTouching = false;
+            let lastY = 0;
+
+            document.addEventListener('touchstart', (e) => {
+                isTouching = true;
+                lastY = e.touches[0].clientY;
+            }, { passive: true });
+
+            document.addEventListener('touchend', () => {
+                isTouching = false;
+            }, { passive: true });
+
+            // التعامل مع السكرول بشكل أكثر كفاءة
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                if (scrollTimeout) {
+                    window.cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = window.requestAnimationFrame(() => {
+                    // تحديث UI بعد توقف السكرول
+                });
+            }, { passive: true });
+        });
+
+        // تبسيط كود تتبع التحميل
+        document.querySelectorAll('.download-btn').forEach(button => {
+            button.addEventListener('click', function(e) {
+                const isIOS = this.classList.contains('apple');
+                trackDownload(isIOS ? 'iOS' : 'Android');
+            }, { passive: true });
+        });
+
+        function trackDownload(platform) {
+            // تتبع التحميل
+            if (typeof twq !== 'undefined') {
+                twq('event', 'tw-pa23z-pa240', {
+                    value: 1.00,
+                    currency: 'SAR',
+                    contents: [{
+                        content_id: `${platform.toLowerCase()}_app_download`,
+                        content_type: 'app_download',
+                        platform: platform
+                    }]
+                });
+            }
+
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-16930945793/app_download',
+                    'value': 1.0,
+                    'currency': 'SAR',
+                    'transaction_id': `${Date.now()}_${platform}`
+                });
+            }
+        }
     </script>
 </body>
 </html>
