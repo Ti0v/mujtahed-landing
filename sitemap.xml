@@ -9,12 +9,12 @@
     
     <!-- الصفحة الرئيسية -->
     <url>
-        <loc>https://mogtahed.netlify.app/</loc>
-        <lastmod>2025-01-06</lastmod>
+        <loc>https://mujtahidacademy.com/</loc>
+        <lastmod>2024-01-14</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
-            <image:loc>https://mogtahed.netlify.app/images/logo1.png</image:loc>
+            <image:loc>https://mujtahidacademy.com/images/logo1.png</image:loc>
             <image:title>شعار تطبيق مجتهد</image:title>
             <image:caption>تطبيق مجتهد - الحل الأمثل لاختبارات قياس</image:caption>
         </image:image>
@@ -22,7 +22,7 @@
 
     <!-- صفحة سياسة الخصوصية -->
     <url>
-        <loc>https://mogtahed.netlify.app/privacy-policy.html</loc>
+        <loc>https://mujtahidacademy.com/privacy-policy.html</loc>
         <lastmod>2025-01-06</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
@@ -145,5 +145,18 @@
         <lastmod>2024-01-14</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://mujtahidacademy.com/practice-tests</loc>
+        <lastmod>2024-01-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
     </url>
 </urlset>

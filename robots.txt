@@ -1,13 +1,7 @@
 # محاكي اختبارات قياس - مجتهد
 User-agent: *
 Allow: /
-Allow: /simulator/
-Allow: /simulator/qudrat/
-Allow: /simulator/tahsili/
-Allow: /simulator/cognitive/
-Allow: /simulator/step/
-Allow: /mock-test/
-Allow: /practice/
+Sitemap: https://mujtahidacademy.com/sitemap.xml
 
 # محاكي قياس
 User-agent: Googlebot
@@ -24,5 +18,3 @@ Crawl-delay: 1
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
-
-Sitemap: https://mujtahidacademy.com/sitemap.xml
