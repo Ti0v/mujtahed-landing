@@ -6,11 +6,11 @@
         xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-    
+
     <!-- الصفحة الرئيسية -->
     <url>
         <loc>https://mujtahidacademy.com/</loc>
-        <lastmod>2024-01-14</lastmod>
+        <lastmod>2025-04-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -28,17 +28,7 @@
         <priority>0.8</priority>
     </url>
 
-    <url>
-        <loc>https://mujtahidacademy.com/</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-        <image:image>
-            <image:loc>https://mujtahidacademy.com/images/app.jpg</image:loc>
-            <image:title>اختبارات قياس تجريبية مجانية 2024</image:title>
-            <image:caption>تدرب على اختبارات قياس مع أكثر من 10,000 سؤال محلول</image:caption>
-        </image:image>
-    </url>
+
 
     <!-- صفحات الاختبارات التجريبية -->
     <url>
@@ -90,7 +80,7 @@
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <url>
         <loc>https://mujtahidacademy.com/qudrat</loc>
         <lastmod>2024-01-14</lastmod>
@@ -105,12 +95,7 @@
         <priority>0.9</priority>
     </url>
 
-    <url>
-        <loc>https://mujtahidacademy.com/privacy-policy.html</loc>
-        <lastmod>2023-11-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
+
     <url>
         <loc>https://mujtahidacademy.com/terms.html</loc>
         <lastmod>2023-11-14</lastmod>
@@ -147,12 +132,7 @@
         <priority>1.0</priority>
     </url>
 
-    <url>
-        <loc>https://mujtahidacademy.com/</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
+
     <url>
         <loc>https://mujtahidacademy.com/practice-tests</loc>
         <lastmod>2024-01-01</lastmod>

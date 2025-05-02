@@ -1,20 +1,52 @@
 # محاكي اختبارات قياس - مجتهد
 User-agent: *
 Allow: /
-Sitemap: https://mujtahidacademy.com/sitemap.xml
+Sitemap: https://www.mujtahidacademy.com/sitemap.xml
 
-# محاكي قياس
+# محاكي قياس - تحسين للـ Googlebot
 User-agent: Googlebot
 Allow: /
 Allow: /simulator/*
+Allow: /mock-tests/*
+Allow: /free-practice/*
+Allow: /sample-questions/*
+Allow: /practice-bank/*
+Allow: /qudrat.html
+Allow: /privacy-policy.html
+Allow: /terms.html
 Crawl-delay: 1
 
+# محاكي قياس - تحسين للـ Bingbot
 User-agent: Bingbot
 Allow: /
 Allow: /simulator/*
+Allow: /mock-tests/*
+Allow: /free-practice/*
+Allow: /sample-questions/*
+Allow: /practice-bank/*
+Allow: /qudrat.html
+Allow: /privacy-policy.html
+Allow: /terms.html
+Crawl-delay: 1
+
+# تحسين للـ Yandex
+User-agent: Yandexbot
+Allow: /
+Allow: /simulator/*
+Allow: /mock-tests/*
 Crawl-delay: 1
 
 # Block non-public
+User-agent: *
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
+Disallow: /404.html
+Disallow: /500.html
+
+# Allow images and assets
+User-agent: Googlebot-Image
+Allow: /images/
+
+# Host
+Host: https://www.mujtahidacademy.com
