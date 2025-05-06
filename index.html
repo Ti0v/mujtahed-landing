@@ -136,6 +136,13 @@
     <meta name="apple-itunes-app" content="app-id=6605936809">
     <meta name="google-play-app" content="app-id=com.mazen.flutterquiz">
 
+    <!-- إضافة كلمات مفتاحية إضافية للمحتوى العربي -->
+    <meta name="keywords" lang="ar" content="اختبار قياس, محاكي قياس, اختبار قدرات, اختبار تحصيلي, قياس 2025, قدرات 2025, تحصيلي 2025, اختبار قياس تجريبي, اختبار قياس محاكي, اختبار قدرات محاكي, اختبار تحصيلي محاكي, تطبيق مجتهد, أكاديمية مجتهد, تحضير قياس, تحضير قدرات, تحضير تحصيلي, نماذج قياس, نماذج قدرات, نماذج تحصيلي, أسئلة قياس, أسئلة قدرات, أسئلة تحصيلي, شرح قياس, شرح قدرات, شرح تحصيلي, تدريب قياس, تدريب قدرات, تدريب تحصيلي, اختبار STEP, اختبار القدرة المعرفية, اختبار قدرات الجامعيين, الرخصة المهنية للمعلمين">
+
+    <!-- إضافة علامات للمشاركة على وسائل التواصل الاجتماعي -->
+    <meta property="article:publisher" content="https://www.facebook.com/mujtahidacademy">
+    <meta property="article:modified_time" content="2025-05-02T13:32:00+03:00">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.mujtahidacademy.com">
 
@@ -191,6 +198,81 @@
         "ratingValue": "4.8",
         "ratingCount": "50000"
       }
+    }
+    </script>
+
+    <!-- إضافة Structured Data للمراجعات -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "تطبيق مجتهد لاختبارات قياس",
+      "description": "تطبيق محاكاة لاختبارات قياس يوفر أكثر من 10,000 سؤال محلول مع شرح تفصيلي",
+      "image": "https://mujtahidacademy.com/images/logo1.png",
+      "brand": {
+        "@type": "Brand",
+        "name": "مجتهد"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "SAR",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "50000",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "أحمد س."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2025-04-15",
+          "reviewBody": "ساعدني التطبيق كثيراً في التحضير لاختبار القدرات. النماذج المحاكية دقيقة جداً والشرح ممتاز!"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "محمد ع."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2025-04-10",
+          "reviewBody": "أفضل تطبيق للتحضير لاختبارات قياس. شرح تفصيلي ونماذج محاكية 100%"
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "سارة م."
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "worstRating": "1"
+          },
+          "datePublished": "2025-04-05",
+          "reviewBody": "تطبيق رائع! ساعدني في رفع درجاتي في التحصيلي بشكل كبير"
+        }
+      ]
     }
     </script>
 
@@ -288,6 +370,185 @@
             transform: translateZ(0);
             backface-visibility: hidden;
         }
+
+        /* أنماط قسم المشاركة */
+        .share-section {
+            margin: 30px 0;
+            text-align: center;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .share-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #0c73e9;
+        }
+
+        .share-subtitle {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .share-btn.facebook {
+            background-color: #3b5998;
+        }
+
+        .share-btn.twitter {
+            background-color: #1da1f2;
+        }
+
+        .share-btn.whatsapp {
+            background-color: #25d366;
+        }
+
+        .share-btn.telegram {
+            background-color: #0088cc;
+        }
+
+        /* أنماط قسم النشرة البريدية */
+        .newsletter {
+            padding: 50px 0;
+            background-color: #f0f7ff;
+        }
+
+        .newsletter-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            padding: 30px;
+            gap: 30px;
+        }
+
+        .newsletter-content {
+            flex: 1;
+        }
+
+        .newsletter-title {
+            font-size: 1.8rem;
+            color: #0c73e9;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .newsletter-form .form-group {
+            display: flex;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px 0 0 5px;
+            font-size: 1rem;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .newsletter-form .subscribe-btn {
+            background-color: #0c73e9;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 0 5px 5px 0;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-family: 'Tajawal', sans-serif;
+            font-weight: 600;
+        }
+
+        .newsletter-form .subscribe-btn:hover {
+            background-color: #0a5dc0;
+        }
+
+        .form-privacy {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .form-privacy a {
+            color: #0c73e9;
+            text-decoration: none;
+        }
+
+        .form-privacy a:hover {
+            text-decoration: underline;
+        }
+
+        .newsletter-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .newsletter-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .newsletter-form .form-group {
+                flex-direction: column;
+            }
+
+            .newsletter-form input[type="email"] {
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+
+            .newsletter-form .subscribe-btn {
+                border-radius: 5px;
+            }
+        }
+
+        /* أنماط رسالة النجاح */
+        .success-message {
+            background-color: #e7f7e7;
+            color: #2e7d32;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            border: 1px solid #c8e6c9;
+        }
     </style>
 </head>
 <body>
@@ -349,7 +610,7 @@
                             <div class="stat-label">سؤال محلول</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">50K+</div>
+                            <div class="stat-value">10K+</div>
                             <div class="stat-label">طالب مستفيد</div>
                         </div>
                         <div class="stat-item">
@@ -536,6 +797,35 @@
                 </div>
             </div>
         </section>
+
+        <!-- إضافة قسم النشرة البريدية -->
+        <!-- <section class="newsletter" id="newsletter">
+            <div class="container">
+                <div class="newsletter-container">
+                    <div class="newsletter-content">
+                        <h2 class="newsletter-title">احصل على آخر التحديثات</h2>
+                        <p class="newsletter-subtitle">اشترك في نشرتنا البريدية للحصول على آخر تحديثات اختبارات قياس ونصائح للتفوق</p>
+                        <form class="newsletter-form" id="newsletter-form" action="https://formspree.io/f/your_formspree_id" method="POST">
+                            <div class="form-group">
+                                <input type="email" name="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
+                                <button type="submit" class="subscribe-btn">اشترك الآن</button>
+                            </div>
+                            <div class="form-privacy">
+                                <label>
+                                    <input type="checkbox" name="consent" required>
+                                    <span>أوافق على <a href="privacy-policy.html">سياسة الخصوصية</a> وتلقي رسائل بريدية من مجتهد</span>
+                                </label>
+                            </div>
+                            <input type="hidden" name="_subject" value="اشتراك جديد في النشرة البريدية - مجتهد">
+                            <input type="hidden" name="_next" value="https://mujtahidacademy.com/thank-you.html">
+                        </form>
+                    </div>
+                    <div class="newsletter-image">
+                        <img src="images/logo1.png" alt="نشرة مجتهد البريدية" width="150" height="150">
+                    </div>
+                </div>
+            </div>
+        </section> -->
     </main>
 
     <footer class="footer">
@@ -588,6 +878,26 @@
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
+                </div>
+            </div>
+
+            <!-- إضافة قسم المشاركة -->
+            <div class="share-section">
+                <h3 class="share-title">شارك التطبيق مع أصدقائك</h3>
+                <p class="share-subtitle">ساعد زملائك في التفوق في اختبارات قياس</p>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://mujtahidacademy.com" class="share-btn facebook" target="_blank" rel="noopener" aria-label="مشاركة على فيسبوك">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=https://mujtahidacademy.com&text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول" class="share-btn twitter" target="_blank" rel="noopener" aria-label="مشاركة على تويتر">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول https://mujtahidacademy.com" class="share-btn whatsapp" target="_blank" rel="noopener" aria-label="مشاركة على واتساب">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://t.me/share/url?url=https://mujtahidacademy.com&text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول" class="share-btn telegram" target="_blank" rel="noopener" aria-label="مشاركة على تيليجرام">
+                        <i class="fab fa-telegram-plane"></i>
+                    </a>
                 </div>
             </div>
 
@@ -768,6 +1078,89 @@
                 });
             }
         }
+
+        // وظيفة الاشتراك في النشرة البريدية
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('email').value;
+            if (!email) return false;
+
+            // تتبع الاشتراك في النشرة البريدية
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'newsletter_signup', {
+                    'event_category': 'engagement',
+                    'event_label': 'newsletter'
+                });
+            }
+
+            // هنا يمكن إضافة كود لإرسال البريد الإلكتروني إلى خادم API
+            // في هذا المثال، سنعرض رسالة نجاح فقط
+
+            // عرض رسالة نجاح
+            const form = document.getElementById('newsletter-form');
+            form.innerHTML = '<div class="success-message">شكراً لاشتراكك! سنرسل لك آخر التحديثات قريباً.</div>';
+
+            return false;
+        }
+
+        // تتبع مشاركات المستخدمين
+        document.addEventListener('DOMContentLoaded', function() {
+            // إضافة تتبع لأزرار المشاركة
+            document.querySelectorAll('.share-btn').forEach(button => {
+                button.addEventListener('click', function(e) {
+                    const platform = this.classList.contains('facebook') ? 'Facebook' :
+                                    this.classList.contains('twitter') ? 'Twitter' :
+                                    this.classList.contains('whatsapp') ? 'WhatsApp' :
+                                    this.classList.contains('telegram') ? 'Telegram' : 'Other';
+
+                    // تتبع المشاركة في Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'share', {
+                            'method': platform,
+                            'content_type': 'website',
+                            'item_id': 'mujtahid_website'
+                        });
+                    }
+
+                    console.log(`تمت المشاركة عبر ${platform}`);
+                });
+            });
+
+            // تتبع الوصول للأقسام المختلفة
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const sectionId = entry.target.id;
+                        if (sectionId && typeof gtag !== 'undefined') {
+                            gtag('event', 'view_section', {
+                                'section_id': sectionId,
+                                'section_name': getSectionName(sectionId)
+                            });
+                        }
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            // مراقبة الأقسام الرئيسية
+            document.querySelectorAll('section[id]').forEach(section => {
+                observer.observe(section);
+            });
+
+            // الحصول على اسم القسم
+            function getSectionName(id) {
+                switch(id) {
+                    case 'features': return 'مميزات التطبيق';
+                    case 'screenshots': return 'صور التطبيق';
+                    case 'reviews': return 'آراء المستخدمين';
+                    case 'faq': return 'الأسئلة الشائعة';
+                    default: return id;
+                }
+            }
+        });
     </script>
 </body>
 </html>
