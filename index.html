@@ -10,8 +10,8 @@
     <meta name="msapplication-TileColor" content="#0c73e9">
 
     <!-- Enhanced SEO Meta Tags -->
-    <title>محاكي جميع اختبارات قياس 2025 | مجتهد</title>
-    <meta name="description" content="اختبارات قياس محاكية 100% ✓ اختبار قدرات تجريبي ✓ اختبار تحصيلي تجريبي ✓ تدرب على 10,000+ سؤال محلول ✓ محاكاة حقيقية لاختبار قياس ✓ شرح تفصيلي مجاني ✓ نماذج محدثة 2025">
+    <title>محاكي اختبارات قياس 2025 مجاني | قدرات تحصيلي STEP رخصة مهنية | مجتهد</title>
+    <meta name="description" content="محاكي قياس مجاني 2025 ✓ اختبار قدرات تجريبي ✓ اختبار تحصيلي تجريبي ✓ محاكي STEP ✓ الرخصة المهنية ✓ القدرة المعرفية ✓ 10,000+ سؤال محلول ✓ شرح تفصيلي ✓ نماذج محدثة ✓ التطبيق الأول في السعودية">
     <meta name="keywords" content="محاكي قياس مجاني, اختبار قياس تجريبي 2025, اختبار قياس محاكي مجانا, محاكاة قدرات, محاكي تحصيلي جديد, اختبار القدرات المحوسب, تجريبي قياس اونلاين, التحصيلي تجريبي, نماذج قياس محلولة, قدرات تدريب, محاكي STEP, محاكي القدرة المعرفية, اختبار قياس, قياس, قدرات, تحصيلي, اختبار قدرات, اختبار تحصيلي, اختبار قياس 2025, قياس 2025, قدرات 2025, تحصيلي 2025, اختبار قدرات 2025, اختبار تحصيلي 2025">
 
     <!-- Additional Meta Tags for Better SEO -->
@@ -150,11 +150,28 @@
     <link rel="alternate" hreflang="ar-SA" href="https://www.mujtahidacademy.com">
     <link rel="alternate" hreflang="x-default" href="https://www.mujtahidacademy.com/en">
 
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Icons - Load asynchronously -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-    <!-- Enhanced Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;200;300;400;500;600;700;800;900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+    <!-- Enhanced Fonts with preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;900&family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/tajawal/v9/Iura6YBj_oCad4k1l_6gLuvPDQ.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/notokufiarabic/v18/CSRg4yNNh-GbW3o3JkwoDcdvMqNhQYcLUn8.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="images/logo1.png" as="image">
+    <link rel="preload" href="images/app.PNG" as="image">
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Favicon -->
     <link rel="icon" href="images/favicon/favicon.ico" />
@@ -163,7 +180,7 @@
     <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="site.webmanifest" />
+    <link rel="manifest" href="manifest.json" />
     <!-- Styles -->
     <link rel="stylesheet" href="styles.css">
 
@@ -328,17 +345,35 @@
 
     <!-- تحديث الـ style في head -->
     <style>
+        /* Critical CSS for performance */
         html {
-            scroll-behavior: auto !important; /* إزالة السلوك الناعم للسكرول */
+            scroll-behavior: auto !important;
             -webkit-overflow-scrolling: touch;
+            font-display: swap;
         }
 
         body {
             overflow-y: auto;
-            overscroll-behavior-y: none; /* منع تأثير الارتداد */
+            overscroll-behavior-y: none;
             margin: 0;
             padding: 0;
             position: relative;
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Preload critical images */
+        .hero {
+            background-image: none;
+            will-change: auto;
+        }
+
+        /* Optimize font loading */
+        @font-face {
+            font-family: 'Tajawal';
+            font-display: swap;
+            font-weight: 400;
+            src: local('Tajawal Regular'), local('Tajawal-Regular');
         }
 
         /* تبسيط الأنيميشن */
@@ -549,6 +584,48 @@
             margin: 20px 0;
             border: 1px solid #c8e6c9;
         }
+
+        /* أنماط روابط المميزات */
+        .feature-link {
+            display: inline-block;
+            margin-top: 15px;
+            color: #0c73e9;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+
+        .feature-link:hover {
+            color: #0a5dc0;
+            border-bottom-color: #0a5dc0;
+            transform: translateX(-3px);
+        }
+
+        .feature-card:hover .feature-link {
+            color: #0a5dc0;
+        }
+
+        /* تحسين أزرار التواصل الاجتماعي */
+        .whatsapp-link {
+            background: linear-gradient(135deg, #25d366, #128c7e);
+            color: white !important;
+        }
+
+        .whatsapp-link:hover {
+            background: linear-gradient(135deg, #128c7e, #25d366);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+        }
+
+        .social-link {
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+        }
     </style>
 </head>
 <body>
@@ -622,7 +699,7 @@
 
                 <div class="app-showcase">
                     <div class="app-badge">جديد</div>
-                    <img src="images/app.PNG" alt="واجهة تطبيق مجتهد لاختبارات قياس" class="app-preview" loading="lazy" width="360" height="720">
+                    <img src="images/app.PNG" alt="واجهة تطبيق مجتهد لاختبارات قياس" class="app-preview" loading="lazy" width="360" height="720" decoding="async">
                     <div class="image-glow"></div>
                 </div>
             </div>
@@ -640,63 +717,69 @@
                         <div class="feature-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <h3>محاكي القدرات العامة</h3>
+                        <h3><a href="qudrat.html" style="color: inherit; text-decoration: none;">محاكي القدرات العامة</a></h3>
                         <p>نماذج محاكاة دقيقة للقدرات تشمل:</p>
                         <ul class="feature-list">
                             <li>القسم الكمي بجميع أنماطه</li>
                             <li>القسم اللفظي بجميع مهاراته</li>
                             <li>شرح تفصيلي لكل سؤال</li>
                         </ul>
+                        <a href="qudrat.html" class="feature-link">استكشف القدرات ←</a>
                     </article>
 
                     <article class="feature-card highlight">
                         <div class="feature-icon">
                             <i class="fas fa-book"></i>
                         </div>
-                        <h3>محاكي التحصيلي</h3>
+                        <h3><a href="tahsili.html" style="color: inherit; text-decoration: none;">محاكي التحصيلي</a></h3>
                         <p>نماذج شاملة للتحصيلي بجميع المسارات:</p>
                         <ul class="feature-list">
                             <li>المسار العلمي بكل تخصصاته</li>
                             <li>المسار الأدبي والشرعي</li>
                             <li>تغطية كاملة للمنهج</li>
                         </ul>
+                        <a href="tahsili.html" class="feature-link">استكشف التحصيلي ←</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-brain"></i>
                         </div>
-                        <h3>محاكي القدرة المعرفية</h3>
+                        <h3><a href="cognitive.html" style="color: inherit; text-decoration: none;">محاكي القدرة المعرفية</a></h3>
                         <p>اختبارات تجريبية متخصصة تشمل جميع مهارات القدرة المعرفية مع نصائح وإرشادات للحل.</p>
+                        <a href="cognitive.html" class="feature-link">استكشف القدرة المعرفية ←</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-university"></i>
                         </div>
-                        <h3>محاكي قدرات الجامعيين</h3>
+                        <h3><a href="university.html" style="color: inherit; text-decoration: none;">محاكي قدرات الجامعيين</a></h3>
                         <p>نماذج محاكاة احترافية لقدرات الجامعيين مع تدريبات مكثفة على أنماط الأسئلة.</p>
+                        <a href="university.html" class="feature-link">استكشف قدرات الجامعيين ←</a>
                     </article>
 
                     <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-language"></i>
                         </div>
-                        <h3>محاكي STEP</h3>
+                        <h3><a href="step.html" style="color: inherit; text-decoration: none;">محاكي STEP</a></h3>
                         <p>تدريبات شاملة على اختبار STEP مع تغطية كاملة لجميع مهارات اللغة الإنجليزية المطلوبة.</p>
+                        <a href="step.html" class="feature-link">استكشف STEP ←</a>
                     </article>
 
-                    <article class="feature-card soon">
+                    <article class="feature-card">
                         <div class="feature-icon">
                             <i class="fas fa-chalkboard-teacher"></i>
                         </div>
-                        <h3>الرخصة المهنية</h3>
-                        <p>قريباً - اختبارات الرخصة المهنية للمعلمين:</p>
+                        <h3><a href="license.html" style="color: inherit; text-decoration: none;">محاكي الرخصة المهنية</a></h3>
+                        <p>اختبارات الرخصة المهنية للمعلمين:</p>
                         <ul class="feature-list">
                             <li>الرخصة المهنية العامة</li>
                             <li>الرخصة المهنية التخصصية</li>
+                            <li>جميع التخصصات التعليمية</li>
                         </ul>
-                        <div class="coming-soon-badge">قريباً</div>
+                        <a href="license.html" class="feature-link">استكشف الرخصة المهنية ←</a>
                     </article>
                 </div>
             </div>
@@ -774,7 +857,7 @@
             </div>
         </section>
 
-        <!-- إضافة قسم الأسئلة الشائعة -->
+        <!-- إضافة قسم الأسئلة الشائعة
         <section class="faq" id="faq">
             <div class="container">
                 <div class="section-header">
@@ -796,7 +879,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- إضافة قسم النشرة البريدية -->
         <!-- <section class="newsletter" id="newsletter">
@@ -837,12 +920,13 @@
                 </div>
 
                 <div class="footer-links">
-                    <h3 class="footer-title">اختبارات قياس</h3>
-                    <a href="qudrat.html" class="footer-link">القدرات العامة</a>
-                    <a href="simulator/tahsili" class="footer-link">التحصيلي</a>
-                    <a href="simulator/step" class="footer-link">STEP</a>
-                    <a href="simulator/cognitive" class="footer-link">القدرة المعرفية</a>
-                    <a href="#" class="footer-link">الرخصة المهنية</a>
+                    <h3 class="footer-title">محاكيات قياس</h3>
+                    <a href="qudrat.html" class="footer-link">محاكي القدرات العامة</a>
+                    <a href="tahsili.html" class="footer-link">محاكي التحصيلي</a>
+                    <a href="step.html" class="footer-link">محاكي STEP</a>
+                    <a href="cognitive.html" class="footer-link">محاكي القدرة المعرفية</a>
+                    <a href="university.html" class="footer-link">محاكي قدرات الجامعيين</a>
+                    <a href="license.html" class="footer-link">محاكي الرخصة المهنية</a>
                 </div>
 
                 <div class="footer-links">
@@ -861,21 +945,19 @@
                     </div>
                     <div class="contact-info">
                         <i class="fas fa-phone"></i>
-                        <span>0581105341</span>
+                        <span dir="ltr">+966 581105341</span>
+                    </div>
+                    <div class="contact-info">
+                        <i class="fab fa-whatsapp"></i>
+                        <span dir="ltr">+966 581105341</span>
                     </div>
 
                     <div class="social-links">
-                        <a href="https://twitter.com/mujtahidacademy" class="social-link" target="_blank" rel="noopener" aria-label="تويتر">
+                        <a href="https://x.com/MGTHD_SA" class="social-link" target="_blank" rel="noopener" aria-label="تويتر">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="https://www.instagram.com/mujtahidacademy" class="social-link" target="_blank" rel="noopener" aria-label="انستغرام">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@mujtahidacademy" class="social-link" target="_blank" rel="noopener" aria-label="تيك توك">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
-                        <a href="https://www.youtube.com/channel/mujtahidacademy" class="social-link" target="_blank" rel="noopener" aria-label="يوتيوب">
-                            <i class="fab fa-youtube"></i>
+                        <a href="https://wa.me/966581105341" class="social-link whatsapp-link" target="_blank" rel="noopener" aria-label="واتساب">
+                            <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
                 </div>
@@ -889,14 +971,11 @@
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://mujtahidacademy.com" class="share-btn facebook" target="_blank" rel="noopener" aria-label="مشاركة على فيسبوك">
                         <i class="fab fa-facebook-f"></i>
                     </a>
-                    <a href="https://twitter.com/intent/tweet?url=https://mujtahidacademy.com&text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول" class="share-btn twitter" target="_blank" rel="noopener" aria-label="مشاركة على تويتر">
+                    <a href="https://x.com/intent/tweet?url=https://mujtahidacademy.com&text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول" class="share-btn twitter" target="_blank" rel="noopener" aria-label="مشاركة على تويتر">
                         <i class="fab fa-twitter"></i>
                     </a>
                     <a href="https://api.whatsapp.com/send?text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول https://mujtahidacademy.com" class="share-btn whatsapp" target="_blank" rel="noopener" aria-label="مشاركة على واتساب">
                         <i class="fab fa-whatsapp"></i>
-                    </a>
-                    <a href="https://t.me/share/url?url=https://mujtahidacademy.com&text=تطبيق مجتهد - محاكي اختبارات قياس مع أكثر من 10,000 سؤال محلول" class="share-btn telegram" target="_blank" rel="noopener" aria-label="مشاركة على تيليجرام">
-                        <i class="fab fa-telegram-plane"></i>
                     </a>
                 </div>
             </div>
@@ -956,26 +1035,38 @@
         window.addEventListener('load', animateStatsIfVisible);
         window.addEventListener('scroll', animateStatsIfVisible);
 
-        // تحسين كود الأنيميشن
+        // تحسين كود الأنيميشن مع requestIdleCallback
+        function scheduleWork(callback) {
+            if ('requestIdleCallback' in window) {
+                requestIdleCallback(callback, { timeout: 1000 });
+            } else {
+                setTimeout(callback, 1);
+            }
+        }
+
         const observerOptions = {
             root: null,
-            rootMargin: '0px',
+            rootMargin: '50px',
             threshold: 0.1
         };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                    observer.unobserve(entry.target); // إلغاء المراقبة بعد التنشيط
+                    scheduleWork(() => {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    });
                 }
             });
         }, observerOptions);
 
         // مراقبة عناصر الإحصائيات
         document.addEventListener('DOMContentLoaded', () => {
-            const stats = document.querySelectorAll('.stat-item');
-            stats.forEach(stat => observer.observe(stat));
+            scheduleWork(() => {
+                const stats = document.querySelectorAll('.stat-item');
+                stats.forEach(stat => observer.observe(stat));
+            });
 
             // إزالة أي event listeners قد تؤثر على السكرول
             window.removeEventListener('scroll', animateStatsIfVisible);
@@ -1111,8 +1202,7 @@
                 button.addEventListener('click', function(e) {
                     const platform = this.classList.contains('facebook') ? 'Facebook' :
                                     this.classList.contains('twitter') ? 'Twitter' :
-                                    this.classList.contains('whatsapp') ? 'WhatsApp' :
-                                    this.classList.contains('telegram') ? 'Telegram' : 'Other';
+                                    this.classList.contains('whatsapp') ? 'WhatsApp' : 'Other';
 
                     // تتبع المشاركة في Google Analytics
                     if (typeof gtag !== 'undefined') {
@@ -1161,6 +1251,19 @@
                 }
             }
         });
+
+        // Register Service Worker for performance
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                        console.log('SW registered successfully');
+                    })
+                    .catch(function(error) {
+                        console.log('SW registration failed');
+                    });
+            });
+        }
     </script>
 </body>
 </html>

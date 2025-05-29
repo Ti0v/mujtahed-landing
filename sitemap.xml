@@ -10,7 +10,7 @@
     <!-- الصفحة الرئيسية -->
     <url>
         <loc>https://mujtahidacademy.com/</loc>
-        <lastmod>2025-04-17</lastmod>
+        <lastmod>2025-01-17</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
@@ -18,6 +18,49 @@
             <image:title>شعار تطبيق مجتهد</image:title>
             <image:caption>تطبيق مجتهد - الحل الأمثل لاختبارات قياس</image:caption>
         </image:image>
+    </url>
+
+    <!-- صفحات المحاكيات الجديدة -->
+    <url>
+        <loc>https://mujtahidacademy.com/qudrat.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/tahsili.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/step.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/cognitive.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/university.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/license.html</loc>
+        <lastmod>2025-01-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
     </url>
 
     <!-- صفحة سياسة الخصوصية -->

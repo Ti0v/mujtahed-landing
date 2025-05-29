@@ -1,0 +1,142 @@
+{
+  "name": "مجتهد - محاكي اختبارات قياس",
+  "short_name": "مجتهد",
+  "description": "تطبيق مجتهد - محاكي اختبارات قياس 2025 مع أكثر من 10,000 سؤال محلول",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0c73e9",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "ar",
+  "dir": "rtl",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "images/favicon/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/favicon/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo1.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "محاكي القدرات",
+      "short_name": "القدرات",
+      "description": "تدرب على اختبار القدرات العامة",
+      "url": "/qudrat.html",
+      "icons": [
+        {
+          "src": "images/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "محاكي التحصيلي",
+      "short_name": "التحصيلي",
+      "description": "تدرب على اختبار التحصيلي",
+      "url": "/tahsili.html",
+      "icons": [
+        {
+          "src": "images/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "محاكي STEP",
+      "short_name": "STEP",
+      "description": "تدرب على اختبار STEP",
+      "url": "/step.html",
+      "icons": [
+        {
+          "src": "images/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "الرخصة المهنية",
+      "short_name": "الرخصة",
+      "description": "تدرب على اختبار الرخصة المهنية",
+      "url": "/license.html",
+      "icons": [
+        {
+          "src": "images/favicon/android-chrome-192x192.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/app.PNG",
+      "sizes": "360x720",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "واجهة تطبيق مجتهد الرئيسية"
+    },
+    {
+      "src": "images/quiz.PNG",
+      "sizes": "360x720",
+      "type": "image/png",
+      "platform": "narrow",
+      "label": "واجهة الاختبارات التجريبية"
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.mazen.flutterquiz",
+      "id": "com.mazen.flutterquiz"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/ae/app/مجتهد/id6605936809",
+      "id": "6605936809"
+    }
+  ],
+  "prefer_related_applications": true,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+mujtahid",
+      "url": "/?action=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "application/pdf": [".pdf"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

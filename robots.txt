@@ -12,6 +12,11 @@ Allow: /free-practice/*
 Allow: /sample-questions/*
 Allow: /practice-bank/*
 Allow: /qudrat.html
+Allow: /tahsili.html
+Allow: /step.html
+Allow: /cognitive.html
+Allow: /university.html
+Allow: /license.html
 Allow: /privacy-policy.html
 Allow: /terms.html
 Crawl-delay: 1
@@ -25,6 +30,11 @@ Allow: /free-practice/*
 Allow: /sample-questions/*
 Allow: /practice-bank/*
 Allow: /qudrat.html
+Allow: /tahsili.html
+Allow: /step.html
+Allow: /cognitive.html
+Allow: /university.html
+Allow: /license.html
 Allow: /privacy-policy.html
 Allow: /terms.html
 Crawl-delay: 1
