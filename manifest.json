@@ -67,30 +67,19 @@
           "sizes": "192x192"
         }
       ]
-    },
-    {
-      "name": "الرخصة المهنية",
-      "short_name": "الرخصة",
-      "description": "تدرب على اختبار الرخصة المهنية",
-      "url": "/license.html",
-      "icons": [
-        {
-          "src": "images/favicon/android-chrome-192x192.png",
-          "sizes": "192x192"
-        }
-      ]
     }
+  
   ],
   "screenshots": [
     {
-      "src": "images/app.PNG",
+      "src": "images/homepage.jpg",
       "sizes": "360x720",
       "type": "image/png",
       "platform": "narrow",
       "label": "واجهة تطبيق مجتهد الرئيسية"
     },
     {
-      "src": "images/quiz.PNG",
+      "src": "images/quiz.jpg",
       "sizes": "360x720",
       "type": "image/png",
       "platform": "narrow",

@@ -14,11 +14,10 @@ const STATIC_FILES = [
     '/step.html',
     '/cognitive.html',
     '/university.html',
-    '/license.html',
     '/styles.css',
     '/images/logo1.png',
-    '/images/app.PNG',
-    '/images/quiz.PNG',
+    '/images/homepage.jpg',
+    '/images/quiz.jpg',
     '/manifest.json'
 ];
 
