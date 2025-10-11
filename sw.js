@@ -15,7 +15,7 @@ const STATIC_FILES = [
     '/cognitive.html',
     '/university.html',
     '/styles.css',
-    '/images/logo1.png',
+    '/images/logo1.svg',
     '/images/homepage.jpg',
     '/images/quiz.jpg',
     '/manifest.json'
@@ -213,7 +213,7 @@ async function handleOffline(request) {
     
     // Return cached image if available
     if (request.destination === 'image') {
-        const cachedResponse = await caches.match('/images/logo1.png');
+        const cachedResponse = await caches.match('/images/logo1.svg');
         if (cachedResponse) {
             return cachedResponse;
         }
@@ -270,8 +270,8 @@ self.addEventListener('push', event => {
         
         const options = {
             body: data.body,
-            icon: '/images/logo1.png',
-            badge: '/images/logo1.png',
+            icon: '/images/logo1.svg',
+            badge: '/images/logo1.svg',
             data: data.url
         };
         
