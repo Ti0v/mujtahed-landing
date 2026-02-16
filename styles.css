@@ -148,6 +148,7 @@ ul {
     font-size: 3.5rem;
     margin-bottom: 24px;
     background: var(--gradient-text);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
@@ -826,6 +827,302 @@ ul {
 
     .hero-text h1 {
         font-size: 2.5rem;
+    }
+}
+
+
+
+/* Download App Section */
+.download-app {
+    padding: 100px 0;
+    background: linear-gradient(to bottom, var(--bg-primary), var(--bg-secondary));
+    position: relative;
+    overflow: hidden;
+}
+
+.download-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 60px;
+}
+
+.app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.app-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.app-feature {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 20px;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: var(--transition);
+}
+
+.app-feature:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(-5px);
+}
+
+.app-feature i {
+    color: var(--primary);
+    font-size: 1.2rem;
+}
+
+.app-feature span {
+    color: var(--text-main);
+    font-size: 1.1rem;
+}
+
+.app-image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    /* Ensure image doesn't overlap on mobile */
+    margin-top: 20px;
+}
+
+.app-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+    z-index: 0;
+}
+
+.app-screen {
+    position: relative;
+    z-index: 1;
+    border-radius: 40px;
+    /* Thicker, more realistic phone bezel */
+    border: 12px solid #1e293b;
+    box-shadow:
+        0 0 0 2px rgba(255, 255, 255, 0.1),
+        /* Outer ring */
+        0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    /* Deep shadow */
+    max-width: 280px;
+    width: 100%;
+    transform: rotate(-3deg);
+    transition: var(--transition);
+    margin: 0 auto;
+    background: #000;
+    /* Ensure black bg for bezel */
+}
+
+.app-screen:hover {
+    transform: rotate(0deg) scale(1.02);
+    border-color: #334155;
+}
+
+@media (max-width: 992px) {
+    .download-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 60px;
+        /* Increased gap */
+    }
+
+    .app-info {
+        align-items: center;
+        order: 1;
+        /* Ensure Text/Buttons are first */
+    }
+
+    .app-image {
+        order: 2;
+        /* Image comes after */
+        margin-top: 20px;
+    }
+
+    .app-feature {
+        width: 100%;
+        justify-content: center;
+        /* Center align on mobile */
+        text-align: center;
+    }
+}
+
+/* FAQ Section */
+.qudrat-faq {
+    padding: 100px 0;
+    background: var(--bg-secondary);
+}
+
+.faq-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 40px auto 0;
+}
+
+.faq-item {
+    background: rgba(30, 41, 59, 0.4);
+    /* Glass-like background */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-md);
+    padding: 24px 30px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.faq-item:hover,
+.faq-item.active {
+    background: rgba(30, 41, 59, 0.8);
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-item h3 {
+    color: var(--text-main);
+    font-size: 1.15rem;
+    margin-bottom: 0;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.faq-item h3::after {
+    content: '+';
+    font-size: 1.5rem;
+    color: var(--primary);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 300;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border-radius: 50%;
+}
+
+.faq-item.active h3 {
+    color: var(--primary-light);
+}
+
+.faq-item.active h3::after {
+    transform: rotate(45deg);
+    background: var(--primary);
+    color: white;
+}
+
+.faq-item p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    font-size: 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    margin-top: 0;
+    padding-left: 10px;
+    border-left: 2px solid rgba(59, 130, 246, 0.2);
+}
+
+.faq-item.active p {
+    max-height: 500px;
+    /* Allow enough height for long answers */
+    opacity: 1;
+    margin-top: 20px;
+}
+
+
+/* Legal Pages */
+.legal-page {
+    padding: 120px 0 80px;
+    background: var(--bg-primary);
+    min-height: 80vh;
+}
+
+.legal-content {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 60px;
+    backdrop-filter: blur(10px);
+}
+
+.page-title {
+    color: var(--white);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.last-updated {
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 60px;
+    font-size: 0.9rem;
+}
+
+.legal-section {
+    margin-bottom: 50px;
+}
+
+.legal-section h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.legal-section h3 {
+    color: var(--white);
+    font-size: 1.3rem;
+    margin: 30px 0 15px;
+}
+
+.legal-section p,
+.legal-section li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+.legal-section ul {
+    padding-right: 20px;
+    margin-bottom: 20px;
+}
+
+.legal-section li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .legal-content {
+        padding: 30px;
+    }
+
+    .page-title {
+        font-size: 2rem;
     }
 }
 

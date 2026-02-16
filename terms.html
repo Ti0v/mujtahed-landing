@@ -1,224 +1,137 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شروط الاستخدام - مجتهد</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0c73e9;
-            --primary-light: #4a90e2;
-            --secondary: #2ecc71;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --white: #ffffff;
-            --background: #f8fafc;
-            --border: #e1e8ed;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>شروط الاستخدام | تطبيق مجتهد</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- CSS and Fonts -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;900&family=Tajawal:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--background);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .terms-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(12, 115, 233, 0.2);
-        }
-
-        .terms-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            font-weight: 700;
-        }
-
-        h3 {
-            color: var(--text);
-            margin: 25px 0 15px;
-            font-size: 1.4em;
-        }
-
-        p, ul {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        ul {
-            padding-right: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background: var(--background);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-right: 4px solid var(--primary);
-        }
-
-        .back-to-home {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        .back-to-home:hover {
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .section {
-                padding: 25px;
-            }
-
-            .terms-header {
-                padding: 30px 20px;
-            }
-
-            .terms-header h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 </head>
+
 <body>
-    <div class="container">
-        <header class="terms-header">
-            <h1>شروط الاستخدام</h1>
-            <p>يرجى قراءة هذه الشروط بعناية قبل استخدام التطبيق</p>
-        </header>
-
-        <div class="section">
-            <h2>مقدمة</h2>
-            <p>مرحباً بك في تطبيق مجتهد. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط والأحكام.</p>
-        </div>
-
-        <div class="section">
-            <h2>الاشتراكات والمدفوعات</h2>
-            <h3>شروط الاشتراك</h3>
-            <ul>
-                <li>يتم تجديد الاشتراكات تلقائياً ما لم يتم إلغاؤها</li>
-                <li>سيتم خصم رسوم التجديد من حسابك خلال 24 ساعة قبل نهاية الفترة الحالية</li>
-                <li>يمكنك إدارة وإلغاء اشتراكك في أي وقت من خلال:
-                    <ul>
-                        <li>مستخدمي iOS: إعدادات App Store > حسابك > الاشتراكات</li>
-                        <li>مستخدمي Android: فتح Google Play Store > القائمة > الاشتراكات</li>
-                    </ul>
-                </li>
-                <li>تتم معالجة جميع المدفوعات بشكل آمن من خلال Apple Pay أو Google Play Billing</li>
-            </ul>
-
-            <div class="highlight">
-                <h3>سياسة الاسترداد</h3>
-                <p>المشتريات تخضع لسياسات المتجر المستخدم:</p>
-                <ul>
-                    <li>مستخدمي iOS: يمكن طلب الاسترداد من خلال App Store وفقاً لسياسات Apple</li>
-                    <li>مستخدمي Android: يمكن طلب الاسترداد من خلال Google Play وفقاً لسياسات Google</li>
-                </ul>
-                <p>يرجى ملاحظة أن قرار الاسترداد يخضع لتقييم المتجر المعني (Apple أو Google).</p>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo1.svg" alt="شعار تطبيق مجتهد">
+                </a>
             </div>
         </div>
+    </header>
 
-        <div class="section">
-            <h2>استخدام التطبيق</h2>
-            <h3>القواعد العامة</h3>
-            <ul>
-                <li>يجب استخدام التطبيق بشكل قانوني وأخلاقي</li>
-                <li>يمنع مشاركة حسابك مع الآخرين</li>
-                <li>يمنع نسخ أو توزيع محتوى التطبيق</li>
-                <li>يجب احترام حقوق الملكية الفكرية</li>
-            </ul>
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1 class="page-title">شروط الاستخدام</h1>
+                <p class="last-updated">آخر تحديث: 2025</p>
+
+                <section class="legal-section">
+                    <h2>مقدمة</h2>
+                    <p>مرحباً بك في تطبيق مجتهد. باستخدامك للتطبيق، فإنك توافق على الالتزام بهذه الشروط والأحكام. يرجى
+                        قراءتها بعناية قبل استخدام التطبيق.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>الاشتراكات والمدفوعات</h2>
+                    <h3>شروط الاشتراك</h3>
+                    <ul>
+                        <li>يتم تجديد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة من نهاية الفترة الحالية</li>
+                        <li>سيتم خصم رسوم التجديد من حسابك خلال 24 ساعة قبل نهاية الفترة الحالية</li>
+                        <li>يمكنك إدارة وإلغاء اشتراكك في أي وقت من خلال إعدادات حساب المتجر (Apple App Store أو Google
+                            Play Store)</li>
+                    </ul>
+
+                    <h3>سياسة الاسترداد</h3>
+                    <p>المشتريات تخضع لسياسات المتجر المستخدم. يرجى مراجعة سياسات Apple أو Google بخصوص طلبات الاسترداد.
+                    </p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>استخدام التطبيق</h2>
+                    <h3>القواعد العامة</h3>
+                    <ul>
+                        <li>يجب استخدام التطبيق بشكل قانوني وأخلاقي</li>
+                        <li>يمنع مشاركة حسابك مع الآخرين</li>
+                        <li>يمنع نسخ أو توزيع محتوى التطبيق</li>
+                        <li>يجب احترام حقوق الملكية الفكرية</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>المحتوى والملكية الفكرية</h2>
+                    <p>جميع المحتويات في التطبيق (الأسئلة، الاختبارات، المواد التعليمية، التصاميم) محمية بحقوق الملكية
+                        الفكرية ومملوكة لتطبيق مجتهد.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>إنهاء الخدمة</h2>
+                    <p>نحتفظ بالحق في تعليق أو إنهاء حسابك في حالة مخالفة الشروط، أو تعديل/إيقاف الخدمة مؤقتاً للصيانة.
+                    </p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>التحديثات والتغييرات</h2>
+                    <p>نحتفظ بالحق في تحديث هذه الشروط من وقت لآخر، وتغيير ميزات التطبيق أو أسعار الاشتراكات مع إشعار
+                        مسبق.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>التواصل والدعم</h2>
+                    <p>للاستفسارات أو المساعدة، يرجى التواصل معنا عبر البريد الإلكتروني: info.mujtahid.sa@gmail.com</p>
+                </section>
+            </div>
         </div>
+    </main>
 
-        <div class="section">
-            <h2>المحتوى والملكية الفكرية</h2>
-            <p>جميع المحتويات في التطبيق محمية بحقوق الملكية الفكرية:</p>
-            <ul>
-                <li>الأسئلة والاختبارات</li>
-                <li>المواد التعليمية</li>
-                <li>الشعارات والتصاميم</li>
-                <li>النصوص والصور</li>
-            </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo1.svg" alt="شعار مجتهد">
+                    <p>تطبيق مجتهد هو الحل الأمثل للطلاب الراغبين في التفوق في اختبارات قياس. يوفر التطبيق أكثر من
+                        10,000 سؤال محلول وشرح تفصيلي.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">محاكيات قياس</h3>
+                    <a href="qudrat.html" class="footer-link">محاكي القدرات العامة</a>
+                    <a href="tahsili.html" class="footer-link">محاكي التحصيلي</a>
+                    <a href="step.html" class="footer-link">محاكي STEP</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">الدعم</h3>
+                    <a href="privacy-policy.html" class="footer-link">سياسة الخصوصية</a>
+                    <a href="terms.html" class="footer-link">شروط الاستخدام</a>
+                    <a href="mailto:info.mujtahid.sa@gmail.com" class="footer-link">المساعدة</a>
+                    <a href="index.html" class="footer-link">الرئيسية</a>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info.mujtahid.sa@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2023-2025 مجتهد - جميع الحقوق محفوظة</p>
+            </div>
         </div>
-
-        <div class="section">
-            <h2>إنهاء الخدمة</h2>
-            <p>نحتفظ بالحق في:</p>
-            <ul>
-                <li>تعليق أو إنهاء حسابك في حالة مخالفة الشروط</li>
-                <li>تعديل أو إيقاف الخدمة مؤقتاً للصيانة</li>
-                <li>إنهاء الاشتراك في حالة الاستخدام غير المشروع</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>التحديثات والتغييرات</h2>
-            <p>نحتفظ بالحق في:</p>
-            <ul>
-                <li>تحديث هذه الشروط من وقت لآخر</li>
-                <li>تغيير ميزات التطبيق أو إضافة ميزات جديدة</li>
-                <li>تعديل أسعار الاشتراكات مع إشعار مسبق</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>التواصل والدعم</h2>
-            <p>للاستفسارات أو المساعدة:</p>
-            <ul>
-                <li>البريد الإلكتروني: support@mujtahed.com</li>
-                <li>قسم الدعم في التطبيق</li>
-            </ul>
-        </div>
-
-        <a href="index.html" class="back-to-home">العودة للرئيسية</a>
-    </div>
+    </footer>
 </body>
+
 </html>

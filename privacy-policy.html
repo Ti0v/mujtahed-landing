@@ -1,222 +1,134 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سياسة الخصوصية - مجتهد</title>
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0c73e9;
-            --primary-light: #4a90e2;
-            --secondary: #2ecc71;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --white: #ffffff;
-            --background: #f8fafc;
-            --border: #e1e8ed;
-        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>سياسة الخصوصية | تطبيق مجتهد</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- CSS and Fonts -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;900&family=Tajawal:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
 
-        body {
-            font-family: 'Tajawal', sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--background);
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .privacy-header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 50px 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(12, 115, 233, 0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .privacy-header h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            font-weight: 900;
-        }
-
-        .section {
-            background: var(--white);
-            padding: 40px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        h2 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.8em;
-            font-weight: 700;
-        }
-
-        h3 {
-            color: var(--text);
-            margin: 25px 0 15px;
-            font-size: 1.4em;
-        }
-
-        p, ul {
-            margin-bottom: 15px;
-            color: var(--text);
-        }
-
-        ul {
-            padding-right: 20px;
-        }
-
-        li {
-            margin-bottom: 10px;
-        }
-
-        .highlight {
-            background: var(--background);
-            padding: 20px;
-            border-radius: 10px;
-            margin: 20px 0;
-            border-right: 4px solid var(--primary);
-        }
-
-        .back-to-home {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: var(--white);
-            text-decoration: none;
-            border-radius: 25px;
-            transition: transform 0.3s ease;
-        }
-
-        .back-to-home:hover {
-            transform: translateY(-2px);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            
-            .section {
-                padding: 25px;
-            }
-
-            .privacy-header {
-                padding: 30px 20px;
-            }
-
-            .privacy-header h1 {
-                font-size: 2em;
-            }
-        }
-    </style>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
 </head>
+
 <body>
-    <div class="container">
-        <header class="privacy-header">
-            <h1>سياسة الخصوصية</h1>
-            <p>نلتزم بحماية خصوصيتك وبياناتك الشخصية</p>
-        </header>
-
-        <div class="section">
-            <h2>مقدمة</h2>
-            <p>نحن في تطبيق مجتهد نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تشرح هذه السياسة كيفية جمعنا واستخدامنا وحماية معلوماتك عند استخدام تطبيقنا.</p>
-        </div>
-
-        <div class="section">
-            <h2>المعلومات التي نجمعها</h2>
-            <h3>معلومات الحساب</h3>
-            <ul>
-                <li>الاسم</li>
-                <li>البريد الإلكتروني</li>
-                <li>صورة الملف الشخصي (اختياري)</li>
-            </ul>
-
-            <h3>معلومات الاستخدام</h3>
-            <ul>
-                <li>نتائج الاختبارات والتقييمات</li>
-                <li>تفضيلات التعلم</li>
-                <li>تاريخ استخدام التطبيق</li>
-            </ul>
-        </div>
-
-        <div class="section">
-            <h2>الاشتراكات والمدفوعات</h2>
-            <p>نقدم خدمات اشتراك مدفوعة في تطبيقنا. عند الاشتراك:</p>
-            <ul>
-                <li>تتم معالجة المدفوعات من خلال App Store (iOS) أو Google Play (Android)</li>
-                <li>يتم تجديد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة من نهاية الفترة الحالية</li>
-                <li>يمكن إدارة الاشتراكات وإلغاؤها من خلال:
-                    <ul>
-                        <li>iOS: إعدادات حساب App Store الخاص بك</li>
-                        <li>Android: إعدادات Google Play Store > الاشتراكات</li>
-                    </ul>
-                </li>
-                <li>لا نخزن معلومات بطاقتك الائتمانية، جميع المعاملات تتم من خلال Apple أو Google</li>
-            </ul>
-
-            <div class="highlight">
-                <h3>سياسة الإلغاء والاسترداد</h3>
-                <p>يمكن طلب استرداد المبلغ من خلال:</p>
-                <ul>
-                    <li>iOS: متجر App Store وفقاً لسياسات Apple</li>
-                    <li>Android: متجر Google Play وفقاً لسياسات Google</li>
-                </ul>
-                <p>نحتفظ بالحق في رفض طلبات الاسترداد إذا تم استخدام الخدمة.</p>
+    <header class="main-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo1.svg" alt="شعار تطبيق مجتهد">
+                </a>
             </div>
         </div>
+    </header>
 
-        <div class="section">
-            <h2>حماية البيانات</h2>
-            <p>نتخذ تدابير أمنية متعددة لحماية بياناتك:</p>
-            <ul>
-                <li>تشفير البيانات المنقولة</li>
-                <li>تحديثات أمنية منتظمة</li>
-                <li>مراقبة مستمرة لأنظمتنا</li>
-            </ul>
+    <main class="legal-page">
+        <div class="container">
+            <div class="legal-content">
+                <h1 class="page-title">سياسة الخصوصية</h1>
+                <p class="last-updated">آخر تحديث: 2025</p>
+
+                <section class="legal-section">
+                    <h2>مقدمة</h2>
+                    <p>نحن في تطبيق مجتهد نقدر خصوصيتك ونلتزم بحماية بياناتك الشخصية. تشرح هذه السياسة كيفية جمعنا
+                        واستخدامنا وحماية معلوماتك عند استخدام تطبيقنا.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>المعلومات التي نجمعها</h2>
+                    <h3>معلومات الحساب</h3>
+                    <ul>
+                        <li>الاسم</li>
+                        <li>البريد الإلكتروني</li>
+                        <li>صورة الملف الشخصي (اختياري)</li>
+                    </ul>
+
+                    <h3>معلومات الاستخدام</h3>
+                    <ul>
+                        <li>نتائج الاختبارات والتقييمات</li>
+                        <li>تفضيلات التعلم</li>
+                        <li>تاريخ استخدام التطبيق</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>الاشتراكات والمدفوعات</h2>
+                    <p>نقدم خدمات اشتراك مدفوعة في تطبيقنا. عند الاشتراك:</p>
+                    <ul>
+                        <li>تتم معالجة المدفوعات من خلال App Store (iOS) أو Google Play (Android)</li>
+                        <li>يتم تجديد الاشتراكات تلقائياً ما لم يتم إلغاؤها قبل 24 ساعة من نهاية الفترة الحالية</li>
+                        <li>يمكن إدارة الاشتراكات وإلغاؤها من خلال إعدادات متجر التطبيقات الخاص بك</li>
+                        <li>لا نخزن معلومات بطاقتك الائتمانية، جميع المعاملات تتم من خلال Apple أو Google</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2>حماية البيانات</h2>
+                    <p>نتخذ تدابير أمنية متعددة لحماية بياناتك، بما في ذلك تشفير البيانات وتحديثات الأمان المستمرة.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>حقوقك</h2>
+                    <p>لديك الحق في الوصول إلى بياناتك، تصحيحها، أو طلب حذف حسابك في أي وقت.</p>
+                </section>
+
+                <section class="legal-section">
+                    <h2>التواصل معنا</h2>
+                    <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية، يمكنك التواصل معنا عبر:</p>
+                    <ul>
+                        <li>البريد الإلكتروني: info.mujtahid.sa@gmail.com</li>
+                    </ul>
+                </section>
+            </div>
         </div>
+    </main>
 
-        <div class="section">
-            <h2>حقوقك</h2>
-            <p>لديك الحق في:</p>
-            <ul>
-                <li>الوصول إلى بياناتك</li>
-                <li>تصحيح بياناتك</li>
-                <li>حذف حسابك</li>
-                <li>طلب نسخة من بياناتك</li>
-            </ul>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="images/logo1.svg" alt="شعار مجتهد">
+                    <p>تطبيق مجتهد هو الحل الأمثل للطلاب الراغبين في التفوق في اختبارات قياس. يوفر التطبيق أكثر من
+                        10,000 سؤال محلول وشرح تفصيلي.</p>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">محاكيات قياس</h3>
+                    <a href="qudrat.html" class="footer-link">محاكي القدرات العامة</a>
+                    <a href="tahsili.html" class="footer-link">محاكي التحصيلي</a>
+                    <a href="step.html" class="footer-link">محاكي STEP</a>
+                </div>
+
+                <div class="footer-links">
+                    <h3 class="footer-title">الدعم</h3>
+                    <a href="privacy-policy.html" class="footer-link">سياسة الخصوصية</a>
+                    <a href="terms.html" class="footer-link">شروط الاستخدام</a>
+                    <a href="mailto:info.mujtahid.sa@gmail.com" class="footer-link">المساعدة</a>
+                    <a href="index.html" class="footer-link">الرئيسية</a>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 class="footer-title">تواصل معنا</h3>
+                    <div class="contact-info">
+                        <i class="fas fa-envelope"></i>
+                        <span>info.mujtahid.sa@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2023-2025 مجتهد - جميع الحقوق محفوظة</p>
+            </div>
         </div>
-
-        <div class="section">
-            <h2>التواصل معنا</h2>
-            <p>إذا كان لديك أي أسئلة حول سياسة الخصوصية أو كيفية التعامل مع بياناتك، يمكنك التواصل معنا عبر:</p>
-            <ul>
-                <li>البريد الإلكتروني: support@mujtahed.com</li>
-                <li>نموذج الاتصال في التطبيق</li>
-            </ul>
-        </div>
-
-        <a href="index.html" class="back-to-home">العودة للرئيسية</a>
-    </div>
+    </footer>
 </body>
+
 </html>
