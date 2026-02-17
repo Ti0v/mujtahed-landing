@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>حاسبة النسبة الموزونة 2025 | حساب معدل القبول الجامعي - مجتهد</title>
+    <meta name="description"
+        content="احسب النسبة الموزونة للقبول في الجامعات السعودية 2025 بسهولة. أدخل درجة القدرات والتحصيلي والثانوية العامة واعرف فرص قبولك في التخصصات المختلفة.">
+
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../images/favicon/favicon.ico">
+
+    <style>
+        .calculator-section {
+            padding: 120px 0 80px;
+            min-height: 80vh;
+        }
+
+        .calculator-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 40px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            font-family: 'Tajawal', sans-serif;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        .calc-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .calc-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+        }
+
+        .result-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 12px;
+            text-align: center;
+            display: none;
+        }
+
+        .result-title {
+            color: #10b981;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+
+        .result-value {
+            color: #fff;
+            font-size: 2.5rem;
+            font-weight: 900;
+        }
+
+        .university-presets {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .preset-chip {
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+
+        .preset-chip:hover,
+        .preset-chip.active {
+            background: rgba(59, 130, 246, 0.2);
+            color: #60a5fa;
+            border-color: #3b82f6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <a href="../index.html" class="logo">
+                <img src="../images/logo1.svg" alt="شعار تطبيق مجتهد">
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../qudrat.html" class="nav-link">قدرات عامة</a>
+                <a href="../tahsili.html" class="nav-link">تحصيلي</a>
+                <a href="../step.html" class="nav-link">STEP</a>
+                <a href="#" class="nav-link active" style="font-weight: bold;">حاسبة الموزونة</a>
+                <a href="../blog/index.html" class="nav-link">المدونة</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="../index.html#download-section" class="btn btn-primary"
+                    style="padding: 8px 20px; font-size: 0.9rem;">حمل التطبيق</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <div class="container">
+                <div class="hero-text" style="text-align: center; margin-bottom: 50px;">
+                    <h1 style="font-size: 2.5rem; margin-bottom: 15px; color: #fff;">حاسبة النسبة الموزونة</h1>
+                    <p style="color: #94a3b8; font-size: 1.1rem;">احسب نسبتك الموزونة للجامعات السعودية بدقة</p>
+                </div>
+
+                <div class="calculator-card">
+                    <div class="university-presets">
+                        <div class="preset-chip active" onclick="setWeights(30, 30, 40)">جامعة الملك سعود (30-30-40)
+                        </div>
+                        <div class="preset-chip" onclick="setWeights(40, 30, 30)">جامعة الإمام (40-30-30)</div>
+                        <div class="preset-chip" onclick="setWeights(50, 40, 10)">المسار الصحي (50-40-10)</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">الثانوية العامة (%)</label>
+                        <input type="number" id="school" class="form-input" placeholder="مثلاً: 95" max="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">القدرات العامة (%)</label>
+                        <input type="number" id="qudrat" class="form-input" placeholder="مثلاً: 85" max="100">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">التحصيلي (%)</label>
+                        <input type="number" id="tahsili" class="form-input" placeholder="مثلاً: 80" max="100">
+                    </div>
+
+                    <!-- الأوزان المخفية للتحكم -->
+                    <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                        <div>
+                            <label class="form-label" style="font-size: 0.8rem;">وزن الثانوية</label>
+                            <input type="number" id="w_school" class="form-input" style="padding: 8px;" value="30">
+                        </div>
+                        <div>
+                            <label class="form-label" style="font-size: 0.8rem;">وزن القدرات</label>
+                            <input type="number" id="w_qudrat" class="form-input" style="padding: 8px;" value="30">
+                        </div>
+                        <div>
+                            <label class="form-label" style="font-size: 0.8rem;">وزن التحصيلي</label>
+                            <input type="number" id="w_tahsili" class="form-input" style="padding: 8px;" value="40">
+                        </div>
+                    </div>
+
+                    <button class="calc-btn" onclick="calculateWeightedScore()">احسب النسبة</button>
+
+                    <div id="result" class="result-box">
+                        <div class="result-title">نسبتك الموزونة هي</div>
+                        <div class="result-value">0.00%</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function setWeights(school, qudrat, tahsili) {
+            document.getElementById('w_school').value = school;
+            document.getElementById('w_qudrat').value = qudrat;
+            document.getElementById('w_tahsili').value = tahsili;
+
+            // Remove active class from all chips
+            document.querySelectorAll('.preset-chip').forEach(chip => chip.classList.remove('active'));
+            // Add active to clicked one (simple implementation)
+            event.target.classList.add('active');
+        }
+
+        function calculateWeightedScore() {
+            const school = parseFloat(document.getElementById('school').value) || 0;
+            const qudrat = parseFloat(document.getElementById('qudrat').value) || 0;
+            const tahsili = parseFloat(document.getElementById('tahsili').value) || 0;
+
+            const w_school = parseFloat(document.getElementById('w_school').value) / 100;
+            const w_qudrat = parseFloat(document.getElementById('w_qudrat').value) / 100;
+            const w_tahsili = parseFloat(document.getElementById('w_tahsili').value) / 100;
+
+            const weightedScore = (school * w_school) + (qudrat * w_qudrat) + (tahsili * w_tahsili);
+
+            const resultBox = document.getElementById('result');
+            const resultValue = resultBox.querySelector('.result-value');
+
+            resultValue.textContent = weightedScore.toFixed(2) + '%';
+            resultBox.style.display = 'block';
+
+            // Animation
+            resultBox.style.animation = 'none';
+            resultBox.offsetHeight; /* trigger reflow */
+            resultBox.style.animation = 'fadeIn 0.5s ease-out';
+        }
+    </script>
+
+</body>
+
+</html>
