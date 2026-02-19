@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#0B1120">
+    <meta name="robots" content="noindex, nofollow">
+    <title>مجتهد | التحقق من الحساب</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;500;700;900&family=Tajawal:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+
+    <!-- Firebase SDK v9 (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+    <style>
+        /* =====================
+           CSS Variables
+        ======================== */
+        :root {
+            --bg-primary: #0B1120;
+            --bg-secondary: #162032;
+            --bg-glass: rgba(30, 41, 59, 0.7);
+            --primary: #3B82F6;
+            --primary-dark: #2563EB;
+            --primary-light: #60A5FA;
+            --accent: #F59E0B;
+            --success: #10B981;
+            --danger: #EF4444;
+            --text-main: #FFFFFF;
+            --text-secondary: #94A3B8;
+            --text-muted: #64748B;
+            --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+            --gradient-text: linear-gradient(to right, #60A5FA, #A78BFA);
+            --border-glass: 1px solid rgba(255, 255, 255, 0.08);
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --radius-sm: 12px;
+            --shadow-glow: 0 0 30px rgba(59, 130, 246, 0.25);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-primary: 'Tajawal', sans-serif;
+            --font-heading: 'Noto Kufi Arabic', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            font-family: var(--font-primary);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body {
+            background-image:
+                radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.18) 0%, transparent 45%),
+                radial-gradient(circle at 85% 85%, rgba(139, 92, 246, 0.18) 0%, transparent 45%);
+        }
+
+        /* =====================
+           Layout
+        ======================== */
+        .page-wrapper {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* =====================
+           Header / Logo
+        ======================== */
+        .site-header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            padding: 18px 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 50;
+            background: rgba(11, 17, 32, 0.7);
+            backdrop-filter: blur(16px);
+            border-bottom: var(--border-glass);
+        }
+
+        .site-header a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .site-header img {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        /* =====================
+           Card Container
+        ======================== */
+        .auth-card {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(22, 32, 50, 0.85);
+            border: var(--border-glass);
+            border-radius: var(--radius-lg);
+            padding: 48px 40px;
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                var(--shadow-glow);
+            position: relative;
+            overflow: hidden;
+            margin-top: 80px;
+            animation: fadeInUp 0.6s ease both;
+        }
+
+        .auth-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        /* =====================
+           States (views)
+        ======================== */
+        .state {
+            display: none;
+            text-align: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .state.active {
+            display: flex;
+        }
+
+        /* =====================
+           Icons
+        ======================== */
+        .icon-wrap {
+            width: 88px;
+            height: 88px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.2rem;
+            margin: 0 auto 8px;
+            position: relative;
+        }
+
+        .icon-wrap.blue {
+            background: rgba(59, 130, 246, 0.15);
+            color: var(--primary-light);
+            border: 1px solid rgba(59, 130, 246, 0.25);
+            box-shadow: 0 0 30px rgba(59, 130, 246, 0.2);
+        }
+
+        .icon-wrap.green {
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--success);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
+        }
+
+        .icon-wrap.red {
+            background: rgba(239, 68, 68, 0.15);
+            color: var(--danger);
+            border: 1px solid rgba(239, 68, 68, 0.25);
+            box-shadow: 0 0 30px rgba(239, 68, 68, 0.2);
+        }
+
+        .icon-wrap.amber {
+            background: rgba(245, 158, 11, 0.15);
+            color: var(--accent);
+            border: 1px solid rgba(245, 158, 11, 0.25);
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+        }
+
+        /* Pulse animation on icon */
+        .icon-wrap.pulse::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid currentColor;
+            opacity: 0.3;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        /* =====================
+           Typography
+        ======================== */
+        .state h1,
+        .state h2 {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            background: var(--gradient-text);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.3;
+        }
+
+        .state p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 360px;
+            line-height: 1.7;
+        }
+
+        /* =====================
+           Form Elements
+        ======================== */
+        .form-group {
+            width: 100%;
+            text-align: right;
+            margin-bottom: 16px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-sm);
+            color: var(--text-main);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: var(--transition);
+            outline: none;
+            direction: ltr;
+            text-align: left;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+
+        .form-input.valid {
+            border-color: var(--success);
+        }
+
+        .form-input.invalid {
+            border-color: var(--danger);
+        }
+
+        /* Password strength */
+        .strength-bar {
+            height: 4px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.08);
+            margin-top: 8px;
+            overflow: hidden;
+        }
+
+        .strength-fill {
+            height: 100%;
+            border-radius: 4px;
+            transition: width 0.4s ease, background 0.4s ease;
+            width: 0%;
+        }
+
+        .strength-text {
+            font-size: 0.8rem;
+            margin-top: 4px;
+            color: var(--text-muted);
+            text-align: right;
+        }
+
+        /* Toggle password visibility */
+        .input-wrapper {
+            position: relative;
+        }
+
+        .toggle-pw {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .toggle-pw:hover {
+            color: var(--text-secondary);
+        }
+
+        /* =====================
+           Buttons
+        ======================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            border: none;
+            transition: var(--transition);
+            text-decoration: none;
+            width: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+        }
+
+        .btn-primary:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-ghost {
+            background: rgba(255, 255, 255, 0.05);
+            border: var(--border-glass);
+            color: var(--text-secondary);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+        }
+
+        .btn-success {
+            background: linear-gradient(135deg, #10B981, #059669);
+            color: white;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+        }
+
+        .btn-success:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.7s linear infinite;
+        }
+
+        /* =====================
+           Alert box
+        ======================== */
+        .alert {
+            width: 100%;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            font-size: 0.9rem;
+            display: none;
+            align-items: flex-start;
+            gap: 10px;
+            text-align: right;
+        }
+
+        .alert.show {
+            display: flex;
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.12);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #FCA5A5;
+        }
+
+        .alert-info {
+            background: rgba(59, 130, 246, 0.12);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            color: #93C5FD;
+        }
+
+        /* =====================
+           Divider / small text
+        ======================== */
+        .divider {
+            width: 100%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.07);
+            margin: 8px 0;
+        }
+
+        .small-link {
+            color: var(--primary-light);
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .small-link:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        /* =====================
+           Loading state spinner full
+        ======================== */
+        .loading-icon {
+            width: 88px;
+            height: 88px;
+            border: 3px solid rgba(59, 130, 246, 0.2);
+            border-top-color: var(--primary-light);
+            border-radius: 50%;
+            animation: spin 0.9s linear infinite;
+            margin: 0 auto;
+        }
+
+        /* =====================
+           Success checkmark animation
+        ======================== */
+        .checkmark-svg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .checkmark-circle {
+            stroke: var(--success);
+            stroke-width: 2;
+            stroke-dasharray: 166;
+            stroke-dashoffset: 166;
+            fill: none;
+            animation: stroke 0.6s ease forwards;
+        }
+
+        .checkmark-check {
+            stroke: var(--success);
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            fill: none;
+            animation: stroke 0.3s 0.6s ease forwards;
+        }
+
+        /* =====================
+           Footer
+        ======================== */
+        .page-footer {
+            margin-top: 32px;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* =====================
+           Animations
+        ======================== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+
+            80%,
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes stroke {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* =====================
+           Responsive
+        ======================== */
+        @media (max-width: 520px) {
+            .auth-card {
+                padding: 36px 24px;
+            }
+
+            .state h1,
+            .state h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <a href="https://mujtahidacademy.com">
+            <img src="images/logo1.svg" alt="مجتهد">
+        </a>
+    </header>
+
+    <!-- Main -->
+    <div class="page-wrapper">
+        <div class="auth-card" role="main">
+
+            <!-- ========== STATE: LOADING ========== -->
+            <div class="state active" id="state-loading">
+                <div class="loading-icon" aria-label="جاري التحقق..."></div>
+                <h2>جاري التحقق...</h2>
+                <p>يرجى الانتظار لحظة</p>
+            </div>
+
+            <!-- ========== STATE: INVALID LINK ========== -->
+            <div class="state" id="state-invalid">
+                <div class="icon-wrap red pulse">
+                    <i class="fas fa-link-slash" aria-hidden="true"></i>
+                </div>
+                <h2>رابط غير صالح</h2>
+                <p>الرابط الذي فتحته منتهي الصلاحية أو تم استخدامه مسبقًا. يرجى طلب رابط جديد من التطبيق.</p>
+                <div class="divider"></div>
+                <a href="https://mujtahidacademy.com" class="btn btn-ghost">
+                    <i class="fas fa-house" aria-hidden="true"></i>
+                    الصفحة الرئيسية
+                </a>
+            </div>
+
+            <!-- ========== STATE: EMAIL VERIFIED ========== -->
+            <div class="state" id="state-verified">
+                <svg class="checkmark-svg" viewBox="0 0 52 52" aria-hidden="true">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" />
+                    <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+                <h2>تم تأكيد بريدك الإلكتروني!</h2>
+                <p>
+                    تم التحقق من حسابك بنجاح. يمكنك الآن استخدام جميع ميزات تطبيق مجتهد.
+                </p>
+                <div class="divider"></div>
+                <a href="https://mujtahidacademy.com" class="btn btn-success">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    الذهاب إلى الموقع
+                </a>
+                <p style="font-size:0.85rem; color: var(--text-muted);">
+                    أو افتح التطبيق مباشرةً للاستمرار
+                </p>
+            </div>
+
+            <!-- ========== STATE: RESET PASSWORD FORM ========== -->
+            <div class="state" id="state-reset">
+                <div class="icon-wrap blue pulse">
+                    <i class="fas fa-lock-open" aria-hidden="true"></i>
+                </div>
+                <h2>إعادة تعيين كلمة المرور</h2>
+                <p>أدخل كلمة مرور جديدة لحسابك في تطبيق <strong style="color:var(--text-main)">مجتهد</strong></p>
+
+                <div class="divider"></div>
+
+                <div class="alert alert-error" id="reset-error" role="alert">
+                    <i class="fas fa-circle-exclamation" aria-hidden="true"></i>
+                    <span id="reset-error-text"></span>
+                </div>
+
+                <form id="reset-form" novalidate style="width:100%">
+                    <!-- New password -->
+                    <div class="form-group">
+                        <label class="form-label" for="new-password">كلمة المرور الجديدة</label>
+                        <div class="input-wrapper">
+                            <input class="form-input" type="password" id="new-password" name="new-password"
+                                autocomplete="new-password" placeholder="8 أحرف على الأقل" minlength="8" required>
+                            <button type="button" class="toggle-pw" aria-label="إظهار / إخفاء كلمة المرور"
+                                onclick="togglePw('new-password', this)">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="strength-bar">
+                            <div class="strength-fill" id="strength-fill"></div>
+                        </div>
+                        <div class="strength-text" id="strength-text"></div>
+                    </div>
+
+                    <!-- Confirm password -->
+                    <div class="form-group">
+                        <label class="form-label" for="confirm-password">تأكيد كلمة المرور</label>
+                        <div class="input-wrapper">
+                            <input class="form-input" type="password" id="confirm-password" name="confirm-password"
+                                autocomplete="new-password" placeholder="أعد كتابة كلمة المرور" required>
+                            <button type="button" class="toggle-pw" aria-label="إظهار / إخفاء كلمة المرور"
+                                onclick="togglePw('confirm-password', this)">
+                                <i class="fas fa-eye" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" id="reset-btn">
+                        <span id="reset-btn-text">تعيين كلمة المرور</span>
+                        <i class="fas fa-arrow-left" aria-hidden="true" id="reset-btn-icon"></i>
+                    </button>
+                </form>
+            </div>
+
+            <!-- ========== STATE: RESET SUCCESS ========== -->
+            <div class="state" id="state-reset-done">
+                <svg class="checkmark-svg" viewBox="0 0 52 52" aria-hidden="true">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" />
+                    <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+                <h2>تم تغيير كلمة المرور!</h2>
+                <p>
+                    تم تعيين كلمة مرور جديدة لحسابك بنجاح. يمكنك الآن تسجيل الدخول في التطبيق.
+                </p>
+                <div class="divider"></div>
+                <a href="https://mujtahidacademy.com" class="btn btn-success">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i>
+                    الذهاب إلى الموقع
+                </a>
+            </div>
+
+        </div><!-- /.auth-card -->
+
+        <!-- Footer note -->
+        <p class="page-footer">
+            <i class="fas fa-shield-halved" aria-hidden="true" style="color:var(--primary-light);margin-left:6px;"></i>
+            هذه الصفحة محمية ومشفرة — تطبيق مجتهد
+        </p>
+    </div>
+
+    <script>
+        // ============================================================
+        //  ⚙️  Firebase Configuration
+        //      استبدل هذه القيم بمعلومات مشروعك من Firebase Console
+        //      Project Settings → General → Your apps → Web app
+        // ============================================================
+        const firebaseConfig = {
+            apiKey: "AIzaSyDFBC7h1Ye46MVK7iNzgnT4tYCMSiOR6OY",
+            authDomain: "quiz-49cd0.firebaseapp.com",
+            projectId: "quiz-49cd0",
+            storageBucket: "quiz-49cd0.firebasestorage.app",
+            messagingSenderId: "695537688649",
+            appId: "1:695537688649:web:718d151de61ec6d8a89f98",
+            measurementId: "G-R9R0HFJV63"
+        };
+
+        // ============================================================
+        //  Firebase Init
+        // ============================================================
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+
+        // ============================================================
+        //  Helpers
+        // ============================================================
+        function showState(id) {
+            document.querySelectorAll('.state').forEach(s => s.classList.remove('active'));
+            const el = document.getElementById(id);
+            if (el) el.classList.add('active');
+        }
+
+        function showError(msgEl, textEl, msg) {
+            textEl.textContent = msg;
+            msgEl.classList.add('show');
+        }
+
+        function hideError(msgEl) {
+            msgEl.classList.remove('show');
+        }
+
+        // Maps Firebase error codes → Arabic messages
+        function arabicError(code) {
+            const map = {
+                'auth/expired-action-code': 'انتهت صلاحية الرابط. يرجى طلب رابط جديد من التطبيق.',
+                'auth/invalid-action-code': 'الرابط غير صالح أو تم استخدامه مسبقًا.',
+                'auth/user-disabled': 'تم تعطيل هذا الحساب. تواصل مع الدعم.',
+                'auth/user-not-found': 'لم يتم العثور على الحساب.',
+                'auth/weak-password': 'كلمة المرور ضعيفة جدًا. استخدم 8 أحرف على الأقل.',
+            };
+            return map[code] || 'حدث خطأ غير متوقع. يرجى المحاولة مرة أخرى.';
+        }
+
+        // ============================================================
+        //  Password strength meter
+        // ============================================================
+        function checkStrength(pw) {
+            let score = 0;
+            if (pw.length >= 8) score++;
+            if (pw.length >= 12) score++;
+            if (/[A-Z]/.test(pw)) score++;
+            if (/[0-9]/.test(pw)) score++;
+            if (/[^A-Za-z0-9]/.test(pw)) score++;
+            return score;
+        }
+
+        document.getElementById('new-password').addEventListener('input', function () {
+            const val = this.value;
+            const score = checkStrength(val);
+            const fill = document.getElementById('strength-fill');
+            const text = document.getElementById('strength-text');
+            const pct = (score / 5) * 100;
+            fill.style.width = pct + '%';
+            if (score <= 1) { fill.style.background = '#EF4444'; text.textContent = 'ضعيف جدًا'; text.style.color = '#EF4444'; }
+            else if (score <= 2) { fill.style.background = '#F97316'; text.textContent = 'ضعيف'; text.style.color = '#F97316'; }
+            else if (score <= 3) { fill.style.background = '#F59E0B'; text.textContent = 'متوسط'; text.style.color = '#F59E0B'; }
+            else if (score <= 4) { fill.style.background = '#10B981'; text.textContent = 'قوي'; text.style.color = '#10B981'; }
+            else { fill.style.background = '#6EE7B7'; text.textContent = 'قوي جدًا'; text.style.color = '#6EE7B7'; }
+            if (!val) { fill.style.width = '0'; text.textContent = ''; }
+        });
+
+        // ============================================================
+        //  Toggle password visibility
+        // ============================================================
+        function togglePw(inputId, btn) {
+            const input = document.getElementById(inputId);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.className = 'fas fa-eye-slash';
+            } else {
+                input.type = 'password';
+                icon.className = 'fas fa-eye';
+            }
+        }
+
+        // ============================================================
+        //  Set button loading state
+        // ============================================================
+        function setBtnLoading(btn, btnText, btnIcon, loading) {
+            if (loading) {
+                btn.disabled = true;
+                btnText.textContent = 'جاري الحفظ...';
+                if (btnIcon) btnIcon.style.display = 'none';
+                // Add spinner
+                if (!btn.querySelector('.spinner')) {
+                    const sp = document.createElement('span');
+                    sp.className = 'spinner';
+                    btn.appendChild(sp);
+                }
+            } else {
+                btn.disabled = false;
+                btnText.textContent = 'تعيين كلمة المرور';
+                if (btnIcon) btnIcon.style.display = '';
+                const sp = btn.querySelector('.spinner');
+                if (sp) sp.remove();
+            }
+        }
+
+        // ============================================================
+        //  Main: Parse URL and handle action
+        // ============================================================
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get('mode');
+        const oobCode = params.get('oobCode');
+        const apiKey = params.get('apiKey');
+
+        // No valid parameters — show invalid
+        if (!mode || !oobCode) {
+            showState('state-invalid');
+        }
+        else if (mode === 'verifyEmail') {
+            // ----------------------------------------------------------
+            //  Email Verification
+            // ----------------------------------------------------------
+            auth.applyActionCode(oobCode)
+                .then(() => {
+                    showState('state-verified');
+                })
+                .catch((err) => {
+                    console.error('verifyEmail error:', err.code, err.message);
+                    showState('state-invalid');
+                });
+        }
+        else if (mode === 'resetPassword') {
+            // ----------------------------------------------------------
+            //  Password Reset — first verify the code is valid
+            // ----------------------------------------------------------
+            auth.verifyPasswordResetCode(oobCode)
+                .then((email) => {
+                    // Code is valid — show the form
+                    const emailNote = document.createElement('p');
+                    emailNote.style.cssText = 'font-size:0.82rem;color:var(--text-muted);direction:ltr;word-break:break-all;';
+                    emailNote.textContent = email;
+                    const stateEl = document.getElementById('state-reset');
+                    // Insert email after the subtitle <p>
+                    const subtitle = stateEl.querySelector('p');
+                    subtitle.insertAdjacentElement('afterend', emailNote);
+                    showState('state-reset');
+                })
+                .catch((err) => {
+                    console.error('verifyPasswordResetCode error:', err.code);
+                    showState('state-invalid');
+                });
+        }
+        else {
+            // Unknown mode
+            showState('state-invalid');
+        }
+
+        // ============================================================
+        //  Reset Form Submit
+        // ============================================================
+        document.getElementById('reset-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const newPw = document.getElementById('new-password').value.trim();
+            const confPw = document.getElementById('confirm-password').value.trim();
+            const btn = document.getElementById('reset-btn');
+            const btnText = document.getElementById('reset-btn-text');
+            const btnIcon = document.getElementById('reset-btn-icon');
+            const errEl = document.getElementById('reset-error');
+            const errText = document.getElementById('reset-error-text');
+
+            hideError(errEl);
+
+            // Validation
+            if (newPw.length < 8) {
+                showError(errEl, errText, 'يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل.');
+                return;
+            }
+            if (newPw !== confPw) {
+                showError(errEl, errText, 'كلمة المرور وتأكيدها غير متطابقين.');
+                document.getElementById('confirm-password').classList.add('invalid');
+                return;
+            }
+
+            document.getElementById('confirm-password').classList.remove('invalid');
+            setBtnLoading(btn, btnText, btnIcon, true);
+
+            auth.confirmPasswordReset(oobCode, newPw)
+                .then(() => {
+                    showState('state-reset-done');
+                })
+                .catch((err) => {
+                    console.error('confirmPasswordReset error:', err.code);
+                    setBtnLoading(btn, btnText, btnIcon, false);
+                    showError(errEl, errText, arabicError(err.code));
+                });
+        });
+    </script>
+
+</body>
+
+</html>
