@@ -2,178 +2,123 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
     <!-- الصفحة الرئيسية -->
     <url>
         <loc>https://mujtahidacademy.com/</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
         <image:image>
             <image:loc>https://mujtahidacademy.com/images/logo1.svg</image:loc>
             <image:title>شعار تطبيق مجتهد</image:title>
-            <image:caption>تطبيق مجتهد - الحل الأمثل لاختبارات قياس</image:caption>
         </image:image>
     </url>
 
-    <!-- صفحات المحاكيات الجديدة -->
+    <!-- صفحات المحاكيات الرئيسية -->
     <url>
         <loc>https://mujtahidacademy.com/qudrat.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
+        <priority>0.95</priority>
     </url>
 
     <url>
         <loc>https://mujtahidacademy.com/tahsili.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
         <loc>https://mujtahidacademy.com/step.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- صفحات القدرات الجديدة -->
+    <url>
+        <loc>https://mujtahidacademy.com/qudrat-pdf.html</loc>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://mujtahidacademy.com/cognitive.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <loc>https://mujtahidacademy.com/qudrat-kemi.html</loc>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
     <url>
-        <loc>https://mujtahidacademy.com/university.html</loc>
-        <lastmod>2025-01-17</lastmod>
+        <loc>https://mujtahidacademy.com/qudrat-lafzi.html</loc>
+        <lastmod>2026-02-20</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
+    <!-- الأدوات -->
+    <url>
+        <loc>https://mujtahidacademy.com/tools/weighted-score-calculator.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- صفحة المدونة -->
+    <url>
+        <loc>https://mujtahidacademy.com/blog/index.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <!-- مقالات المدونة -->
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/qudrat-preparation-guide.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/qudrat-tips-2025.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/qiyas-dates-2025.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/qudrat-score-calculator.html</loc>
+        <lastmod>2026-02-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
 
     <!-- صفحة سياسة الخصوصية -->
     <url>
         <loc>https://mujtahidacademy.com/privacy-policy.html</loc>
         <lastmod>2025-01-06</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.5</priority>
     </url>
-
-
-
-    <!-- صفحات الاختبارات التجريبية -->
-    <url>
-        <loc>https://mujtahidacademy.com/mock-tests/qudrat</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/mock-tests/tahsili</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/free-practice/step</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/sample-questions/cognitive</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/practice-bank/university</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <!-- صفحات المحتوى التعليمي -->
-    <url>
-        <loc>https://mujtahidacademy.com/study-materials</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/practice-tests</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/qudrat</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/tahsili</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-    </url>
-
 
     <url>
         <loc>https://mujtahidacademy.com/terms.html</loc>
-        <lastmod>2023-11-14</lastmod>
+        <lastmod>2025-01-06</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
+        <priority>0.5</priority>
     </url>
 
-    <!-- صفحات محاكي الاختبارات -->
-    <url>
-        <loc>https://mujtahidacademy.com/simulator/qudrat</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/simulator/tahsili</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/simulator/cognitive</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <url>
-        <loc>https://mujtahidacademy.com/simulator/step</loc>
-        <lastmod>2024-01-14</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-
-    <url>
-        <loc>https://mujtahidacademy.com/practice-tests</loc>
-        <lastmod>2024-01-01</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
 </urlset>

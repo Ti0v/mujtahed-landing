@@ -1,21 +1,21 @@
 # محاكي اختبارات قياس - مجتهد
 User-agent: *
 Allow: /
-Sitemap: https://www.mujtahidacademy.com/sitemap.xml
+Sitemap: https://mujtahidacademy.com/sitemap.xml
 
 # محاكي قياس - تحسين للـ Googlebot
 User-agent: Googlebot
 Allow: /
-Allow: /simulator/*
-Allow: /mock-tests/*
-Allow: /free-practice/*
-Allow: /sample-questions/*
-Allow: /practice-bank/*
 Allow: /qudrat.html
+Allow: /qudrat-pdf.html
+Allow: /qudrat-kemi.html
+Allow: /qudrat-lafzi.html
 Allow: /tahsili.html
 Allow: /step.html
-Allow: /cognitive.html
-Allow: /university.html
+Allow: /blog/
+Allow: /blog/index.html
+Allow: /blog/articles/
+Allow: /tools/
 Allow: /privacy-policy.html
 Allow: /terms.html
 Crawl-delay: 1
@@ -23,16 +23,14 @@ Crawl-delay: 1
 # محاكي قياس - تحسين للـ Bingbot
 User-agent: Bingbot
 Allow: /
-Allow: /simulator/*
-Allow: /mock-tests/*
-Allow: /free-practice/*
-Allow: /sample-questions/*
-Allow: /practice-bank/*
 Allow: /qudrat.html
+Allow: /qudrat-pdf.html
+Allow: /qudrat-kemi.html
+Allow: /qudrat-lafzi.html
 Allow: /tahsili.html
 Allow: /step.html
-Allow: /cognitive.html
-Allow: /university.html
+Allow: /blog/
+Allow: /tools/
 Allow: /privacy-policy.html
 Allow: /terms.html
 Crawl-delay: 1
@@ -40,8 +38,6 @@ Crawl-delay: 1
 # تحسين للـ Yandex
 User-agent: Yandexbot
 Allow: /
-Allow: /simulator/*
-Allow: /mock-tests/*
 Crawl-delay: 1
 
 # Block non-public
@@ -57,4 +53,4 @@ User-agent: Googlebot-Image
 Allow: /images/
 
 # Host
-Host: https://www.mujtahidacademy.com
+Host: https://mujtahidacademy.com
