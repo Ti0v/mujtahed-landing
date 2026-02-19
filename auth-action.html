@@ -602,37 +602,7 @@
                     <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                 </svg>
                 <h2>تم تأكيد بريدك الإلكتروني! 🎉</h2>
-                <p>تم التحقق من حسابك بنجاح. سيتم فتح تطبيق مجتهد تلقائيًا...</p>
-
-                <!-- Auto-open progress bar -->
-                <div style="width:100%;background:rgba(255,255,255,0.08);border-radius:99px;height:6px;overflow:hidden">
-                    <div id="verify-progress"
-                        style="height:100%;width:0%;background:linear-gradient(90deg,#3B82F6,#10B981);border-radius:99px;transition:width 1.5s linear">
-                    </div>
-                </div>
-                <p style="font-size:0.8rem;color:var(--text-muted)">جاري فتح التطبيق تلقائيًا...</p>
-
-                <div class="divider"></div>
-
-                <!-- Open app button -->
-                <a href="#" id="open-app-btn-verify" class="btn btn-success" onclick="openApp(); return false;">
-                    <i class="fas fa-mobile-screen" aria-hidden="true"></i>
-                    فتح تطبيق مجتهد
-                </a>
-
-                <!-- Store fallbacks -->
-                <div style="display:flex;gap:12px;width:100%;margin-top:4px">
-                    <a href="https://apps.apple.com/ae/app/%D9%85%D8%AC%D8%AA%D9%87%D8%AF/id6605936809"
-                        style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:rgba(255,255,255,0.05);border:var(--border-glass);border-radius:var(--radius-sm);color:var(--text-secondary);font-size:0.88rem;text-decoration:none;transition:var(--transition)"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-apple" style="font-size:1.1rem"></i> App Store
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.mazen.flutterquiz"
-                        style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:rgba(255,255,255,0.05);border:var(--border-glass);border-radius:var(--radius-sm);color:var(--text-secondary);font-size:0.88rem;text-decoration:none;transition:var(--transition)"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-google-play" style="font-size:1rem"></i> Google Play
-                    </a>
-                </div>
+                <p>تم التحقق من حسابك بنجاح. يمكنك الآن العودة إلى التطبيق والاستمرار.</p>
             </div>
 
             <!-- ========== STATE: RESET PASSWORD FORM ========== -->
@@ -694,36 +664,10 @@
                     <circle class="checkmark-circle" cx="26" cy="26" r="25" />
                     <path class="checkmark-check" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
                 </svg>
-                <h2>تم تغيير كلمة المرور! 🔐</h2>
-                <p>تم تعيين كلمة مرور جديدة بنجاح. سيتم فتح التطبيق تلقائيًا لتسجيل الدخول...</p>
-
-                <!-- Auto-open progress bar -->
-                <div style="width:100%;background:rgba(255,255,255,0.08);border-radius:99px;height:6px;overflow:hidden">
-                    <div id="reset-progress"
-                        style="height:100%;width:0%;background:linear-gradient(90deg,#F59E0B,#10B981);border-radius:99px;transition:width 1.5s linear">
-                    </div>
-                </div>
-                <p style="font-size:0.8rem;color:var(--text-muted)">جاري فتح التطبيق تلقائيًا...</p>
-
-                <div class="divider"></div>
-
-                <a href="#" class="btn btn-success" onclick="openApp(); return false;">
-                    <i class="fas fa-mobile-screen" aria-hidden="true"></i>
-                    فتح تطبيق مجتهد
-                </a>
-
-                <div style="display:flex;gap:12px;width:100%;margin-top:4px">
-                    <a href="https://apps.apple.com/ae/app/%D9%85%D8%AC%D8%AA%D9%87%D8%AF/id6605936809"
-                        style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:rgba(255,255,255,0.05);border:var(--border-glass);border-radius:var(--radius-sm);color:var(--text-secondary);font-size:0.88rem;text-decoration:none;transition:var(--transition)"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-apple" style="font-size:1.1rem"></i> App Store
-                    </a>
-                    <a href="https://play.google.com/store/apps/details?id=com.mazen.flutterquiz"
-                        style="flex:1;display:flex;align-items:center;justify-content:center;gap:8px;padding:11px;background:rgba(255,255,255,0.05);border:var(--border-glass);border-radius:var(--radius-sm);color:var(--text-secondary);font-size:0.88rem;text-decoration:none;transition:var(--transition)"
-                        target="_blank" rel="noopener">
-                        <i class="fab fa-google-play" style="font-size:1rem"></i> Google Play
-                    </a>
-                </div>
+                <h2>تم تغيير كلمة المرور! 🎉</h2>
+                <p>
+                    تم تعيين كلمة مرور جديدة لحسابك بنجاح. يمكنك الآن العودة إلى التطبيق.
+                </p>
             </div>
 
         </div><!-- /.auth-card -->
@@ -756,46 +700,6 @@
         // ============================================================
         firebase.initializeApp(firebaseConfig);
         const auth = firebase.auth();
-
-        // ============================================================
-        //  Deep Link — opens the Flutter app
-        //  Package: com.mazen.flutterquiz | iOS ID: 6605936809
-        // ============================================================
-        function openApp() {
-            const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
-            const isAndroid = /android/i.test(navigator.userAgent);
-
-            // Custom URL scheme deep link
-            const deepLink = 'mujtahid://auth/verified';
-
-            if (isIOS) {
-                // Try deep link, fallback to App Store after 2s
-                window.location.href = deepLink;
-                setTimeout(() => {
-                    window.location.href = 'https://apps.apple.com/ae/app/%D9%85%D8%AC%D8%AA%D9%87%D8%AF/id6605936809';
-                }, 2000);
-            } else if (isAndroid) {
-                // Android Intent
-                window.location.href = 'intent://auth/verified#Intent;scheme=mujtahid;package=com.mazen.flutterquiz;end';
-                setTimeout(() => {
-                    window.location.href = 'https://play.google.com/store/apps/details?id=com.mazen.flutterquiz';
-                }, 2000);
-            } else {
-                // Desktop — go to website
-                window.location.href = 'https://mujtahidacademy.com';
-            }
-        }
-
-        // Auto-trigger with progress bar animation
-        function autoOpenApp(progressId) {
-            // Start progress bar
-            setTimeout(() => {
-                const bar = document.getElementById(progressId);
-                if (bar) bar.style.width = '100%';
-            }, 100);
-            // Open app after animation
-            setTimeout(() => openApp(), 1600);
-        }
 
         // ============================================================
         //  Helpers
@@ -912,7 +816,6 @@
             auth.applyActionCode(oobCode)
                 .then(() => {
                     showState('state-verified');
-                    autoOpenApp('verify-progress');
                 })
                 .catch((err) => {
                     console.error('verifyEmail error:', err.code, err.message);
@@ -978,7 +881,6 @@
             auth.confirmPasswordReset(oobCode, newPw)
                 .then(() => {
                     showState('state-reset-done');
-                    autoOpenApp('reset-progress');
                 })
                 .catch((err) => {
                     console.error('confirmPasswordReset error:', err.code);
