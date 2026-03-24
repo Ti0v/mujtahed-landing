@@ -154,7 +154,6 @@
 
     <!-- Alternate Language Versions -->
     <link rel="alternate" hreflang="ar-SA" href="https://www.mujtahidacademy.com">
-    <link rel="alternate" hreflang="x-default" href="https://www.mujtahidacademy.com/en">
 
     <!-- Icons - Load asynchronously -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
@@ -208,12 +207,6 @@
         twq('config', 'pa23z');
     </script>
     <!-- End Twitter conversion tracking base code -->
-
-    <!-- إضافة Meta Description باللغة العربية والإنجليزية -->
-    <meta name="description" lang="ar"
-        content="محاكي قياس 2025 - تدرب الآن على اختبارات القدرات والتحصيلي وSTEP مع أكثر من 10,000 سؤال محلول وشرح تفصيلي مجاني">
-    <meta name="description" lang="en"
-        content="Qiyas Simulator 2025 - Practice now for Qudrat, Tahsili and STEP tests with over 10,000 solved questions and free detailed explanations">
 
     <!-- إضافة Structured Data للتطبيق التعليمي -->
     <script type="application/ld+json">
@@ -601,6 +594,20 @@
             font-size: 1.1rem;
             margin: 20px 0;
             border: 1px solid #c8e6c9;
+        }
+
+        .sticky-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sticky-btn.apple {
+            background-color: #000;
+        }
+
+        .sticky-btn.google {
+            background-color: #3ddc84;
+            color: #000;
         }
 
         /* أنماط روابط المميزات */
@@ -1026,7 +1033,7 @@
 
 
             <div class="footer-bottom">
-                <p>© 2023-2025 مجتهد - جميع الحقوق محفوظة | التطبيق الأول لتحضير اختبارات قياس في المملكة العربية
+                <p>© 2023-2026 مجتهد - جميع الحقوق محفوظة | التطبيق الأول لتحضير اختبارات قياس في المملكة العربية
                     السعودية</p>
             </div>
         </div>
@@ -1315,9 +1322,14 @@
     <div class="sticky-download-bar">
         <div class="sticky-info">
             <span class="sticky-text">حمل تطبيق مجتهد الآن</span>
-            <span class="sticky-subtext">أكثر من 50,000 طالب يثقون بنا 🔥</span>
+            <span class="sticky-subtext">أكثر من 70,000 طالب يثقون بنا 🔥</span>
         </div>
-        <a href="https://apps.apple.com/ae/app/مجتهد/id6605936809" class="sticky-btn">تحميل التطبيق</a>
+        <div class="sticky-buttons">
+            <a href="https://apps.apple.com/sa/app/مجتهد/id6605936809" class="sticky-btn apple"><i
+                    class="fab fa-apple"></i> iOS</a>
+            <a href="https://play.google.com/store/apps/details?id=com.mazen.flutterquiz" class="sticky-btn google"><i
+                    class="fab fa-google-play"></i> Android</a>
+        </div>
     </div>
 
     <script>

@@ -18,7 +18,6 @@ Allow: /blog/articles/
 Allow: /tools/
 Allow: /privacy-policy.html
 Allow: /terms.html
-Crawl-delay: 1
 
 # محاكي قياس - تحسين للـ Bingbot
 User-agent: Bingbot
@@ -33,12 +32,10 @@ Allow: /blog/
 Allow: /tools/
 Allow: /privacy-policy.html
 Allow: /terms.html
-Crawl-delay: 1
 
 # تحسين للـ Yandex
 User-agent: Yandexbot
 Allow: /
-Crawl-delay: 1
 
 # Block non-public
 User-agent: *
