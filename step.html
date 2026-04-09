@@ -33,7 +33,7 @@
     <meta property="og:locale" content="ar_SA">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://mujtahidacademy.com/step">
+    <link rel="canonical" href="https://www.mujtahidacademy.com/step">
 
     <!-- تضمين ملفات CSS والخطوط -->
     <link rel="stylesheet" href="styles.css">
@@ -47,16 +47,29 @@
     <!-- تحسين Favicon -->
     <link rel="icon" type="image/x-icon" href="images/favicon/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "الرئيسية", "item": "https://www.mujtahidacademy.com"},
+        {"@type": "ListItem", "position": 2, "name": "محاكي STEP", "item": "https://www.mujtahidacademy.com/step"}
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-nav">تخطي إلى المحتوى الرئيسي</a>
     <header class="main-header">
         <div class="container header-content">
             <a href="index.html" class="logo">
-                <img src="images/logo1.svg" alt="شعار تطبيق مجتهد">
+                <img src="images/logo1.svg" alt="شعار تطبيق مجتهد" width="140" height="45">
             </a>
 
-            <nav class="nav-menu">
+            <nav class="nav-menu" role="navigation" aria-label="القائمة الرئيسية">
                 <a href="qudrat.html" class="nav-link">قدرات عامة</a>
                 <a href="tahsili.html" class="nav-link">تحصيلي</a>
                 <a href="step.html" class="nav-link active">STEP</a>
@@ -72,7 +85,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <!-- قسم STEP -->
         <section class="hero">
             <div class="container">

@@ -1,3 +1,23 @@
+/* Skip Navigation - Accessibility */
+.skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    background: var(--primary);
+    color: #fff;
+    padding: 12px 24px;
+    z-index: 10000;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 0 0 8px 0;
+    transition: top 0.3s;
+}
+
+.skip-nav:focus {
+    top: 0;
+}
+
 /* Base Styles & Variables */
 :root {
     /* Color Palette - Dark Premium Theme */

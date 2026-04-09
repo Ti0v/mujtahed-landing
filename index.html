@@ -77,7 +77,39 @@
               "name": "ما هي أفضل طريقة للتحضير لاختبار القدرات؟",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "التدرب على نماذج محاكية لاختبار قياس مع حل أسئلة تجريبية وفهم الشرح التفصيلي لكل سؤال. تطبيق مجتهد يوفر نماذج محدثة 2024 تحاكي نمط أسئلة الاختبار"
+                "text": "التدرب على نماذج محاكية لاختبار قياس مع حل أسئلة تجريبية وفهم الشرح التفصيلي لكل سؤال. تطبيق مجتهد يوفر نماذج محدثة 2026 تحاكي نمط أسئلة الاختبار"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل النماذج محاكية لاختبار قياس الحقيقي؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم، جميع النماذج مصممة لتحاكي اختبار قياس الرسمي بنسبة 100% من حيث نوع الأسئلة والوقت والصعوبة، مما يمنحك تجربة واقعية قبل الاختبار الفعلي."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "ما الفرق بين اختبار القدرات المحوسب والورقي؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "الاختبار المحوسب يقدم عبر الحاسب في مراكز قياس المعتمدة ويتيح مرونة أكبر في اختيار الموعد، بينما الورقي يعقد في فترات محددة. تطبيق مجتهد يحاكي كلا النوعين."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "كيف أحسن درجتي في اختبار القدرات؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "أفضل طريقة هي التدرب المستمر على نماذج محاكية مع فهم الشرح التفصيلي لكل سؤال. ابدأ بالأسئلة السهلة ثم تدرج للأصعب، وركز على نقاط ضعفك."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "هل تطبيق مجتهد مجاني؟",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "نعم، التطبيق مجاني 100% مع إمكانية الوصول لجميع المحتوى التعليمي بدون أي رسوم أو اشتراكات."
               }
             }
           ]
@@ -178,7 +210,7 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="images/logo1.svg" as="image">
-    <link rel="preload" href="images/homepage.jpg" as="image">
+    <link rel="preload" href="images/homepage.jpg" as="image" fetchpriority="high">
 
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
@@ -301,6 +333,34 @@
           "reviewBody": "تطبيق رائع! ساعدني في رفع درجاتي في التحصيلي بشكل كبير"
         }
       ]
+    }
+    </script>
+
+    <!-- Organization Schema for better SERP visibility -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "أكاديمية مجتهد",
+      "alternateName": "Mujtahid Academy",
+      "url": "https://www.mujtahidacademy.com",
+      "logo": "https://www.mujtahidacademy.com/images/logo1.svg",
+      "sameAs": [
+        "https://x.com/MGTHD_SA",
+        "https://wa.me/966581105341"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+966581105341",
+        "contactType": "customer support",
+        "availableLanguage": "Arabic",
+        "email": "info.mujtahid.sa@gmail.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "SA"
+      },
+      "description": "المنصة الأولى لمحاكاة جميع اختبارات قياس في السعودية - قدرات، تحصيلي، STEP، القدرة المعرفية"
     }
     </script>
 
@@ -655,6 +715,9 @@
 </head>
 
 <body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">تخطي إلى المحتوى الرئيسي</a>
+
     <!-- تعديل الهيدر -->
     <!-- <header class="main-header">
         <div class="container">
@@ -673,7 +736,7 @@
                 <img src="images/logo1.svg" alt="شعار تطبيق مجتهد">
             </a>
 
-            <nav class="nav-menu">
+            <nav class="nav-menu" role="navigation" aria-label="القائمة الرئيسية">
                 <a href="qudrat.html" class="nav-link">قدرات عامة</a>
                 <a href="tahsili.html" class="nav-link">تحصيلي</a>
                 <a href="step.html" class="nav-link">STEP</a>
@@ -689,7 +752,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content" role="main">
         <section class="hero">
             <div class="container">
                 <div class="hero-content">
@@ -746,8 +809,8 @@
 
                     <div class="app-showcase">
                         <div class="app-badge">جديد</div>
-                        <img src="images/homepage.jpg" alt="واجهة تطبيق مجتهد لاختبارات قياس" class="app-preview"
-                            loading="lazy" width="360" height="720" decoding="async">
+                        <img src="images/homepage.jpg" alt="واجهة تطبيق مجتهد لاختبارات قياس - محاكي اختبار القدرات والتحصيلي" class="app-preview"
+                            width="360" height="720" fetchpriority="high">
                         <div class="image-glow"></div>
                     </div>
                 </div>
@@ -922,61 +985,62 @@
             </div>
         </section>
 
-        <!-- إضافة قسم الأسئلة الشائعة
+        <!-- قسم الأسئلة الشائعة -->
         <section class="faq" id="faq">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">الأسئلة الشائعة</h2>
-                    <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعاً</p>
+                    <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعاً عن اختبارات قياس</p>
                 </div>
                 <div class="faq-grid">
                     <div class="faq-item">
                         <h3>كيف يمكنني البدء في استخدام التطبيق؟</h3>
-                        <p>قم بتحميل التطبيق من متجر التطبيقات وابدأ التدرب مجاناً على آلاف الأسئلة المحلولة.</p>
+                        <p>قم بتحميل التطبيق من متجر التطبيقات (App Store أو Google Play) وابدأ التدرب مجاناً على أكثر من 10,000 سؤال محلول مع شرح تفصيلي.</p>
                     </div>
                     <div class="faq-item">
                         <h3>هل التطبيق مجاني بالكامل؟</h3>
-                        <p>نعم، التطبيق مجاني 100% مع إمكانية الوصول لجميع المحتوى التعليمي.</p>
+                        <p>نعم، التطبيق مجاني 100% مع إمكانية الوصول لجميع المحتوى التعليمي بدون أي رسوم أو اشتراكات.</p>
                     </div>
                     <div class="faq-item">
                         <h3>كم عدد النماذج المتوفرة؟</h3>
-                        <p>يوفر التطبيق أكثر من 50 نموذجاً محاكياً لجميع اختبارات قياس.</p>
+                        <p>يوفر التطبيق أكثر من 50 نموذجاً محاكياً لجميع اختبارات قياس تشمل القدرات العامة والتحصيلي وSTEP والقدرة المعرفية.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>هل النماذج محاكية لاختبار قياس الحقيقي؟</h3>
+                        <p>نعم، جميع النماذج مصممة لتحاكي اختبار قياس الرسمي بنسبة 100% من حيث نوع الأسئلة والوقت والصعوبة، مما يمنحك تجربة واقعية قبل الاختبار الفعلي.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>ما الفرق بين اختبار القدرات المحوسب والورقي؟</h3>
+                        <p>الاختبار المحوسب يقدم عبر الحاسب في مراكز قياس المعتمدة ويتيح مرونة أكبر في اختيار الموعد، بينما الورقي يعقد في فترات محددة. تطبيق مجتهد يحاكي كلا النوعين.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>كيف أحسن درجتي في اختبار القدرات؟</h3>
+                        <p>أفضل طريقة هي التدرب المستمر على نماذج محاكية مع فهم الشرح التفصيلي لكل سؤال. ابدأ بالأسئلة السهلة ثم تدرج للأصعب، وركز على نقاط ضعفك.</p>
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>
 
-        <!-- إضافة قسم النشرة البريدية -->
+        <!-- قسم النشرة البريدية (معلق - يحتاج إعداد خدمة بريد إلكتروني) -->
         <!-- <section class="newsletter" id="newsletter">
             <div class="container">
                 <div class="newsletter-container">
                     <div class="newsletter-content">
                         <h2 class="newsletter-title">احصل على آخر التحديثات</h2>
                         <p class="newsletter-subtitle">اشترك في نشرتنا البريدية للحصول على آخر تحديثات اختبارات قياس ونصائح للتفوق</p>
-                        <form class="newsletter-form" id="newsletter-form" action="https://formspree.io/f/your_formspree_id" method="POST">
+                        <form class="newsletter-form" id="newsletter-form">
                             <div class="form-group">
                                 <input type="email" name="email" id="email" placeholder="أدخل بريدك الإلكتروني" required>
                                 <button type="submit" class="subscribe-btn">اشترك الآن</button>
                             </div>
-                            <div class="form-privacy">
-                                <label>
-                                    <input type="checkbox" name="consent" required>
-                                    <span>أوافق على <a href="privacy-policy.html">سياسة الخصوصية</a> وتلقي رسائل بريدية من مجتهد</span>
-                                </label>
-                            </div>
-                            <input type="hidden" name="_subject" value="اشتراك جديد في النشرة البريدية - مجتهد">
-                            <input type="hidden" name="_next" value="https://mujtahidacademy.com/thank-you.html">
                         </form>
-                    </div>
-                    <div class="newsletter-image">
-                        <img src="images/logo1.svg" alt="نشرة مجتهد البريدية" width="150" height="150">
                     </div>
                 </div>
             </div>
         </section> -->
     </main>
 
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
