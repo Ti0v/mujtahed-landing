@@ -61,6 +61,13 @@
         <priority>0.9</priority>
     </url>
 
+    <url>
+        <loc>https://mujtahidacademy.com/cognitive.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- الأدوات -->
     <url>
         <loc>https://mujtahidacademy.com/tools/weighted-score-calculator.html</loc>
@@ -104,6 +111,72 @@
         <lastmod>2026-03-24</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.75</priority>
+    </url>
+
+    <!-- مقالات المدونة الإضافية -->
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/common-qudrat-mistakes.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/effective-study-schedule.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/step-preparation-strategy.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/articles/tahsili-preparation-guide.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <!-- صفحات المدونة القديمة -->
+    <url>
+        <loc>https://mujtahidacademy.com/blog/how-to-score-90-qudrat.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/computerized-vs-paper.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/verbal-section-hacks.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- تصنيفات المدونة -->
+    <url>
+        <loc>https://mujtahidacademy.com/blog/category/qudrat.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.65</priority>
+    </url>
+
+    <url>
+        <loc>https://mujtahidacademy.com/blog/category/teacher-license.html</loc>
+        <lastmod>2026-04-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.65</priority>
     </url>
 
     <!-- صفحة سياسة الخصوصية -->
