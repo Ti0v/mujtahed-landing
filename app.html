@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0c73e9">
+    <meta name="robots" content="noindex, nofollow">
+
+    <title>تحميل تطبيق مجتهد | محاكي اختبارات قياس 2026</title>
+    <meta name="description" content="حمّل تطبيق مجتهد الآن - محاكي اختبارات قياس (قدرات، تحصيلي، STEP) مجاناً على iOS و Android.">
+
+    <!-- Open Graph للمشاركة في واتساب/تويتر/فيسبوك -->
+    <meta property="og:title" content="تطبيق مجتهد - محاكي اختبارات قياس 2026">
+    <meta property="og:description" content="حمّل التطبيق الآن مجاناً واستعد لاختبار القدرات والتحصيلي">
+    <meta property="og:image" content="https://mujtahidacademy.com/images/logo1.svg">
+    <meta property="og:url" content="https://mujtahidacademy.com/app">
+    <meta property="og:type" content="website">
+
+    <!-- iOS Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6605936809">
+
+    <link rel="icon" href="images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png">
+
+    <!-- Preconnect للسرعة -->
+    <link rel="preconnect" href="https://apps.apple.com">
+    <link rel="preconnect" href="https://play.google.com">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0c73e9 0%, #0a5dc1 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 480px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 24px;
+            padding: 40px 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+        }
+        .logo {
+            width: 100px;
+            height: 100px;
+            background: #fff;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        .logo img { width: 70px; height: 70px; }
+        h1 { font-size: 28px; margin-bottom: 8px; font-weight: 700; }
+        .subtitle { font-size: 16px; opacity: 0.9; margin-bottom: 30px; line-height: 1.6; }
+
+        /* Loading state (للجوال) */
+        .loading { display: none; }
+        .loading.active { display: block; }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loading-text { font-size: 18px; margin-top: 15px; }
+
+        /* Desktop buttons */
+        .desktop-view { display: none; }
+        .desktop-view.active { display: block; }
+        .btns { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: #fff;
+            color: #0c73e9;
+            border-radius: 14px;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: 600;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); }
+        .btn i { font-size: 24px; }
+        .btn.apple { background: #000; color: #fff; }
+        .btn.google { background: #01875f; color: #fff; }
+
+        .qr-section {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        .qr-section p { margin-bottom: 12px; font-size: 14px; opacity: 0.9; }
+        #qrcode { background: #fff; padding: 12px; border-radius: 12px; display: inline-block; }
+
+        .footer-link {
+            margin-top: 25px;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .footer-link a { color: #fff; text-decoration: underline; }
+
+        /* Manual fallback (يظهر بعد ثانيتين على الجوال إذا لم يتم التحويل) */
+        .fallback {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            font-size: 14px;
+        }
+        .fallback.active { display: block; }
+        .fallback a { color: #fff; font-weight: 700; text-decoration: underline; }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="images/logo1.svg" alt="مجتهد" onerror="this.src='images/favicon/web-app-manifest-192x192.png'">
+        </div>
+        <h1>تطبيق مجتهد</h1>
+        <p class="subtitle">محاكي اختبارات قياس 2026<br>قدرات • تحصيلي • STEP • القدرة المعرفية</p>
+
+        <!-- شاشة التحميل (للجوال) -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p class="loading-text">جارٍ تحويلك إلى المتجر...</p>
+            <div class="fallback" id="fallback">
+                لم يتم التحويل تلقائياً؟
+                <a href="#" id="fallbackLink">اضغط هنا للتحميل</a>
+            </div>
+        </div>
+
+        <!-- عرض الديسكتوب -->
+        <div class="desktop-view" id="desktopView">
+            <div class="btns">
+                <a href="https://apps.apple.com/ae/app/مجتهد/id6605936809" class="btn apple" id="iosBtn">
+                    <i class="fab fa-apple"></i>
+                    <span>تحميل على App Store</span>
+                </a>
+                <a href="https://play.google.com/store/apps/details?id=com.mazen.flutterquiz" class="btn google" id="androidBtn">
+                    <i class="fab fa-google-play"></i>
+                    <span>تحميل على Google Play</span>
+                </a>
+            </div>
+            <div class="qr-section">
+                <p><i class="fas fa-qrcode"></i> امسح الكود بكاميرا جوالك</p>
+                <div id="qrcode"></div>
+            </div>
+        </div>
+
+        <p class="footer-link">
+            <a href="/">العودة للموقع الرئيسي</a>
+        </p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+    <script>
+        (function () {
+            const APP_STORE = 'https://apps.apple.com/ae/app/%D9%85%D8%AC%D8%AA%D9%87%D8%AF/id6605936809';
+            const PLAY_STORE = 'https://play.google.com/store/apps/details?id=com.mazen.flutterquiz';
+
+            const ua = navigator.userAgent || navigator.vendor || window.opera;
+            const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+            const isAndroid = /android/i.test(ua);
+
+            // تمرير UTM parameters للمتجر (للتتبع الإعلاني)
+            const urlParams = window.location.search;
+            const utmString = urlParams ? urlParams.substring(1) : '';
+
+            function buildPlayStoreUrl() {
+                if (!utmString) return PLAY_STORE;
+                // Google Play يدعم referrer parameter
+                const referrer = encodeURIComponent(utmString);
+                return PLAY_STORE + '&referrer=' + referrer;
+            }
+
+            function buildAppStoreUrl() {
+                // App Store يدعم ct (campaign token) و pt (provider token)
+                if (!utmString) return APP_STORE;
+                return APP_STORE + '?' + utmString;
+            }
+
+            const loadingEl = document.getElementById('loading');
+            const desktopEl = document.getElementById('desktopView');
+            const fallbackEl = document.getElementById('fallback');
+            const fallbackLink = document.getElementById('fallbackLink');
+
+            if (isIOS) {
+                const url = buildAppStoreUrl();
+                loadingEl.classList.add('active');
+                fallbackLink.href = url;
+                window.location.replace(url);
+                setTimeout(function () { fallbackEl.classList.add('active'); }, 2000);
+            } else if (isAndroid) {
+                const url = buildPlayStoreUrl();
+                loadingEl.classList.add('active');
+                fallbackLink.href = url;
+                window.location.replace(url);
+                setTimeout(function () { fallbackEl.classList.add('active'); }, 2000);
+            } else {
+                // ديسكتوب - عرض الزرين والـ QR
+                desktopEl.classList.add('active');
+                document.getElementById('iosBtn').href = buildAppStoreUrl();
+                document.getElementById('androidBtn').href = buildPlayStoreUrl();
+
+                // إنشاء QR Code يحوّل لنفس صفحة /app (الذكية)
+                if (typeof QRCode !== 'undefined') {
+                    new QRCode(document.getElementById('qrcode'), {
+                        text: window.location.href,
+                        width: 140,
+                        height: 140,
+                        colorDark: '#0c73e9',
+                        colorLight: '#ffffff',
+                        correctLevel: QRCode.CorrectLevel.H
+                    });
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>
