@@ -217,14 +217,23 @@
                 return APP_STORE + '?' + utmString;
             }
 
-            // إرسال event للـ TikTok Pixel
+            // إرسال events للـ TikTok Pixel
             function trackTikTokEvent(platform) {
                 if (typeof ttq === 'object' && ttq.track) {
                     try {
-                        ttq.track('ClickButton', {
-                            content_id: platform === 'ios' ? '6605936809' : 'com.mazen.flutterquiz',
+                        var contentId = platform === 'ios' ? '6605936809' : 'com.mazen.flutterquiz';
+                        var contentName = platform === 'ios' ? 'iOS App Download' : 'Android App Download';
+                        // ViewContent: حدث معياري يُحسّن خوارزمية TikTok (يحل تحذير funnel)
+                        ttq.track('ViewContent', {
+                            content_id: contentId,
                             content_type: 'product',
-                            content_name: platform === 'ios' ? 'iOS App Download' : 'Android App Download'
+                            content_name: contentName
+                        });
+                        // ClickButton: حدث التحويل الرئيسي (وصول للمتجر)
+                        ttq.track('ClickButton', {
+                            content_id: contentId,
+                            content_type: 'product',
+                            content_name: contentName
                         });
                     } catch (e) { /* تجاهل أي خطأ */ }
                 }
