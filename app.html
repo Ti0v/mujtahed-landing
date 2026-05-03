@@ -240,15 +240,15 @@
                 loadingEl.classList.add('active');
                 fallbackLink.href = url;
                 trackTikTokEvent('ios');
-                // تأخير بسيط 150ms يضمن إرسال الـ event قبل التحويل
-                setTimeout(function () { window.location.replace(url); }, 150);
-                setTimeout(function () { fallbackEl.classList.add('active'); }, 2000);
+                // 600ms يضمن إرسال الـ TikTok event قبل الانتقال للمتجر
+                setTimeout(function () { window.location.replace(url); }, 600);
+                setTimeout(function () { fallbackEl.classList.add('active'); }, 2500);
             } else if (isAndroid) {
                 const url = buildPlayStoreUrl();
                 loadingEl.classList.add('active');
                 fallbackLink.href = url;
                 trackTikTokEvent('android');
-                setTimeout(function () { window.location.replace(url); }, 150);
+                setTimeout(function () { window.location.replace(url); }, 600);
                 setTimeout(function () { fallbackEl.classList.add('active'); }, 2000);
             } else {
                 // ديسكتوب - عرض الزرين والـ QR
