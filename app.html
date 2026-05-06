@@ -223,8 +223,14 @@
                     try {
                         var contentId = platform === 'ios' ? '6605936809' : 'com.mazen.flutterquiz';
                         var contentName = platform === 'ios' ? 'iOS App Download' : 'Android App Download';
-                        // ViewContent: حدث معياري يُحسّن خوارزمية TikTok (يحل تحذير funnel)
+                        // ViewContent: أعلى المسار - اهتمام بالتطبيق
                         ttq.track('ViewContent', {
+                            content_id: contentId,
+                            content_type: 'product',
+                            content_name: contentName
+                        });
+                        // Download: أسفل المسار - يحل تحذير "missing vertical funnel events"
+                        ttq.track('Download', {
                             content_id: contentId,
                             content_type: 'product',
                             content_name: contentName
