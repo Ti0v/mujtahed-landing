@@ -2002,3 +2002,112 @@ ul {
     align-items: center;
     justify-content: center;
 }
+
+/* =========================================================
+   Mobile fixes
+   ========================================================= */
+
+/* The decorative glow is 120% of its parent and absolutely positioned, so on a
+   375px screen it pushed the document to 435px and the whole page scrolled
+   sideways. Clip it at the showcase instead of letting it size the page. */
+.app-showcase {
+    max-width: 100%;
+    overflow: hidden;
+    padding: 20px 0;
+}
+
+.image-glow {
+    max-width: 100%;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    /* The phone mock was 280px wide -> ~577px tall stacked under the copy,
+       making the download section feel endless on a phone. */
+    .app-screen {
+        max-width: 190px;
+        border-width: 8px;
+        border-radius: 28px;
+    }
+
+    .app-preview {
+        max-width: 220px;
+    }
+
+    .download-content {
+        gap: 32px;
+        margin-top: 32px;
+    }
+
+    .download-app {
+        padding: 64px 0;
+    }
+
+    .app-image {
+        margin-top: 0;
+    }
+
+    .image-glow {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .app-screen {
+        max-width: 165px;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+}
+
+/* Intrinsic width/height attributes reserve the right space during load, but
+   once CSS constrains the width the height attribute would still apply and
+   stretch the image (the phone mock rendered 280x1280 instead of 280x577).
+   height:auto restores the aspect ratio while keeping the CLS benefit. */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Wide comparison tables must scroll inside their own box; without an explicit
+   max-width the 600px min-width leaked out and the whole page scrolled sideways. */
+.seo-table-wrapper,
+.compare-wrap {
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Hero copy is a flex item; without min-width:0 its content set an intrinsic
+   width wider than the phone screen. */
+.hero-text {
+    min-width: 0;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+
+    .hero-text,
+    .hero-content>* {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+    }
+
+    .hero-subtitle {
+        max-width: 100%;
+    }
+}
+
+/* The badge is deliberately offset outside the phone mock (right:-20px); on a
+   phone that hangs past the viewport edge, so pull it inside on small screens. */
+@media (max-width: 768px) {
+    .app-badge {
+        right: 8px;
+        top: 24px;
+        padding: 9px 18px;
+        font-size: 0.85rem;
+    }
+}
