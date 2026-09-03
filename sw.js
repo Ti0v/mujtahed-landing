@@ -1,9 +1,9 @@
 // Service Worker for Mujtahid Academy
 // Version 1.0.0
 
-const CACHE_NAME = 'mujtahid-v1.0.0';
-const STATIC_CACHE = 'mujtahid-static-v1.0.0';
-const DYNAMIC_CACHE = 'mujtahid-dynamic-v1.0.0';
+const CACHE_NAME = 'mujtahid-v1.1.0';
+const STATIC_CACHE = 'mujtahid-static-v1.1.0';
+const DYNAMIC_CACHE = 'mujtahid-dynamic-v1.1.0';
 
 // Files to cache immediately
 const STATIC_FILES = [
@@ -15,7 +15,6 @@ const STATIC_FILES = [
     '/styles.css',
     '/images/logo1.svg',
     '/images/homepage.jpg',
-    '/images/quiz.jpg',
     '/manifest.json'
 ];
 

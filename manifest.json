@@ -73,17 +73,10 @@
   "screenshots": [
     {
       "src": "images/homepage.jpg",
-      "sizes": "360x720",
-      "type": "image/png",
+      "sizes": "621x1280",
+      "type": "image/jpeg",
       "platform": "narrow",
       "label": "واجهة تطبيق مجتهد الرئيسية"
-    },
-    {
-      "src": "images/quiz.jpg",
-      "sizes": "360x720",
-      "type": "image/png",
-      "platform": "narrow",
-      "label": "واجهة الاختبارات التجريبية"
     }
   ],
   "related_applications": [
