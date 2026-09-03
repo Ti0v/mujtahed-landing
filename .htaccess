@@ -81,4 +81,9 @@ FileETag None
   RewriteEngine On
   RewriteRule ^privacy-policy$ privacy-policy.html [L]
   RewriteRule ^terms$ terms.html [L]
+
+  # Removed sections - keep indexed URLs alive with 301s
+  RewriteRule ^cognitive(\.html)?$ / [L,R=301]
+  RewriteRule ^university(\.html)?$ /qudrat.html [L,R=301]
+  RewriteRule ^blog/category/teacher-license(\.html)?$ /blog/index.html [L,R=301]
 </IfModule>

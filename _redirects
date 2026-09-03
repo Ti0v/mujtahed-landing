@@ -3,3 +3,10 @@
 /app              /app.html              200
 /download         /app.html              200
 /get              /app.html              200
+
+# Removed sections (app covers qudrat / tahsili / STEP only)
+/cognitive.html    /index.html    301
+/cognitive         /index.html    301
+/university.html   /qudrat.html   301
+/blog/category/teacher-license.html    /blog/index.html    301
+/blog/category/teacher-license         /blog/index.html    301

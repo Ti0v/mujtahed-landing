@@ -12,8 +12,6 @@ const STATIC_FILES = [
     '/qudrat.html',
     '/tahsili.html',
     '/step.html',
-    '/cognitive.html',
-    '/university.html',
     '/styles.css',
     '/images/logo1.svg',
     '/images/homepage.jpg',
