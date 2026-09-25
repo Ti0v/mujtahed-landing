@@ -3,6 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
+    <!-- OpenAI Pixel -->
+    <script>!function(w,d,s,u){if(w.oaiq)return;var q=function(){q.q.push(arguments)};q.q=[];w.oaiq=q;var j=d.createElement(s);j.async=1;j.src=u;var f=d.getElementsByTagName(s)[0];f.parentNode.insertBefore(j,f)}(window,document,"script","https://bzrcdn.openai.com/sdk/oaiq.min.js");oaiq("init",{pixelId:"YZVVvS4b59LdFYGVDVkdzi",debug:true});</script>
+    <script>
+        oaiq("measure","page_viewed",{type:"contents",contents:[{id:location.pathname,content_type:"page"}]});
+        document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href*=\"apps.apple.com\"],a[href*=\"play.google.com\"],a[href*=\"onelink.to\"]");if(!a)return;var p=/play.google/.test(a.href)?"android":/apps.apple/.test(a.href)?"ios":"auto";oaiq("measure","custom",{type:"custom",contents:[{id:p+"_app_download",content_type:"app"}]},{custom_event_name:"app_store_clicked"});},true);
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>شروط الاستخدام | تطبيق مجتهد</title>
 
