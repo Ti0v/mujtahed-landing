@@ -246,44 +246,24 @@
     </script>
     <!-- End Twitter conversion tracking base code -->
 
-    <!-- إضافة Structured Data للتطبيق التعليمي -->
+    <!-- Structured Data للتطبيق مع المراجعات (تطبيق مجاني، ليس Product حتى لا تُطلب بيانات الشحن والإرجاع) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "MobileApplication",
-      "name": "مجتهد - محاكي اختبارات قياس",
-      "operatingSystem": ["iOS", "Android"],
-      "applicationCategory": "EducationalApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "SAR"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.7",
-        "ratingCount": "4350"
-      }
-    }
-    </script>
-
-    <!-- إضافة Structured Data للمراجعات -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Product",
       "name": "تطبيق مجتهد لاختبارات قياس",
       "description": "تطبيق محاكاة لاختبارات قياس يوفر أكثر من 10,000 سؤال محلول مع شرح تفصيلي",
       "image": "https://mujtahidacademy.com/images/logo1.svg",
-      "brand": {
-        "@type": "Brand",
+      "operatingSystem": ["iOS", "Android"],
+      "applicationCategory": "EducationalApplication",
+      "publisher": {
+        "@type": "Organization",
         "name": "مجتهد"
       },
       "offers": {
         "@type": "Offer",
         "price": "0",
-        "priceCurrency": "SAR",
-        "availability": "https://schema.org/InStock"
+        "priceCurrency": "SAR"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
