@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src 'self' data: https:; connect-src https: http://localhost:* http://127.0.0.1:*; base-uri 'none'; form-action 'none'">
+<title>دعوة للانضمام إلى مجتهد</title>
+
+<script id="mj-config">
+/* =====================================================================
+   إعدادات صفحة الدعوة — عدّل هذا الكائن فقط (راجع landing/README.md)
+   functionsBase: رابط Supabase Edge Functions بدون "/" في آخره.
+     يبقى placeholder أو فارغاً = لا يُسجَّل أي نقر (الصفحة تعمل كتحويل للمتجر فقط).
+   ===================================================================== */
+window.MJ_CONFIG = {
+  functionsBase: 'https://hvaaanxzxbhaebmqpphu.supabase.co/functions/v1',
+  androidPackage: 'com.mazen.flutterquiz',
+  iosAppId: '6605936809',
+  androidRedirectDelayMs: 1200,
+  rememberDays: 30
+};
+</script>
+
+<meta name="description" content="حمّل تطبيق مجتهد — منصة التعلم والمسابقات التفاعلية — وفعّل دعوتك بكود المسوّق.">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6fc">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1222">
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-itunes-app" content="app-id=6605936809">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="مجتهد">
+<meta property="og:locale" content="ar_AR">
+<meta property="og:title" content="دعوة خاصة للانضمام إلى تطبيق مجتهد">
+<meta property="og:description" content="منصة التعلم والمسابقات التفاعلية. حمّل التطبيق وفعّل دعوتك بكود المسوّق.">
+<!-- No og:url and no rel="canonical", on purpose. Crawlers take either as THE
+     address of the page, and Facebook can point a shared post at it: one fixed
+     value here would turn every /i/?c=<CODE> and /i/<CODE> into the bare /i/,
+     with no code. Left out, each shared link stays its own URL. -->
+<meta property="og:image" content="https://mujtahidacademy.com/i/logo.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
+<meta property="og:image:alt" content="شعار تطبيق مجتهد">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="دعوة خاصة للانضمام إلى تطبيق مجتهد">
+<meta name="twitter:description" content="منصة التعلم والمسابقات التفاعلية. حمّل التطبيق وفعّل دعوتك بكود المسوّق.">
+<meta name="twitter:image" content="https://mujtahidacademy.com/i/logo.png">
+
+<link rel="icon" type="image/png" href="/i/logo.png">
+<link rel="apple-touch-icon" href="/i/logo.png">
+
+<style>
+:root {
+  --bg: #f3f6fc;
+  --glow-a: rgba(59, 130, 246, 0.18);
+  --glow-b: rgba(110, 86, 207, 0.16);
+  --card: #ffffff;
+  --card-border: rgba(30, 58, 138, 0.10);
+  --text: #0b1530;
+  --muted: #56627e;
+  --soft: #eef3ff;
+  --soft-border: rgba(37, 99, 235, 0.28);
+  --accent: #2563eb;
+  --accent-ink: #1d4ed8;
+  --brand-grad: linear-gradient(135deg, #5a4db2 0%, #2f6bda 100%);
+  --store-bg: #0b1530;
+  --store-ink: #ffffff;
+  --store-bg-hover: #16224a;
+  --ok: #047857;
+  --ok-soft: #e7f7ef;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 18px 40px -12px rgba(30, 58, 138, 0.20);
+  --ring: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b1222;
+    --glow-a: rgba(59, 130, 246, 0.16);
+    --glow-b: rgba(124, 92, 230, 0.15);
+    --card: #131d33;
+    --card-border: rgba(124, 158, 255, 0.14);
+    --text: #eef2fa;
+    --muted: #9ba8c2;
+    --soft: rgba(59, 130, 246, 0.10);
+    --soft-border: rgba(96, 165, 250, 0.38);
+    --accent: #7fb0ff;
+    --accent-ink: #a9c8ff;
+    --store-bg: #f1f5fb;
+    --store-ink: #0b1530;
+    --store-bg-hover: #ffffff;
+    --ok: #34d399;
+    --ok-soft: rgba(52, 211, 153, 0.12);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 24px 48px -16px rgba(0, 0, 0, 0.55);
+    --ring: 0 0 0 3px rgba(127, 176, 255, 0.45);
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-height: 100svh;
+  background:
+    radial-gradient(900px 520px at 110% -10%, var(--glow-a), transparent 60%),
+    radial-gradient(800px 480px at -10% 110%, var(--glow-b), transparent 60%),
+    var(--bg);
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: "IBM Plex Sans Arabic", "Segoe UI", "Noto Sans Arabic", "Noto Kufi Arabic", Tahoma, system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: var(--accent); }
+button { font: inherit; }
+
+.wrap {
+  width: 100%;
+  max-width: 460px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: max(28px, env(safe-area-inset-top)) 16px max(20px, env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* ---------- hero ---------- */
+.hero { text-align: center; }
+.logo-ring {
+  width: 96px; height: 96px;
+  margin: 0 auto 10px;
+  border-radius: 28px;
+  padding: 4px;
+  background: var(--brand-grad);
+  box-shadow: 0 14px 34px -10px rgba(47, 107, 218, 0.55);
+}
+.logo {
+  display: block;
+  width: 88px; height: 88px;
+  border-radius: 24px;
+  background: #3f5cc6;
+}
+.brand { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: 0; line-height: 1.3; }
+.tagline { margin: 2px 0 0; color: var(--muted); font-size: 14.5px; }
+
+/* ---------- card ---------- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  padding: 22px 18px 20px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  animation: rise .45s cubic-bezier(.2, .8, .2, 1) both;
+}
+@keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+
+.pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin: 0 0 10px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--soft);
+  color: var(--accent-ink);
+  font-size: 13px; font-weight: 600;
+}
+.pill svg { width: 15px; height: 15px; }
+h1 { margin: 0; font-size: 23px; line-height: 1.4; font-weight: 800; }
+.lead { margin: 6px 0 0; color: var(--muted); font-size: 15.5px; }
+
+/* ---------- code ---------- */
+.code-box {
+  margin: 18px 0 0;
+  padding: 14px 14px 14px;
+  border: 1.5px dashed var(--soft-border);
+  border-radius: 18px;
+  background: var(--soft);
+}
+.code-label { display: block; color: var(--muted); font-size: 13px; font-weight: 600; }
+.code {
+  display: block;
+  margin: 2px 0 10px;
+  direction: ltr;
+  unicode-bidi: isolate;
+  font-family: ui-monospace, "SF Mono", "Cascadia Mono", "Roboto Mono", Menlo, Consolas, monospace;
+  font-size: clamp(26px, 9vw, 36px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  -webkit-user-select: all;
+  user-select: all;
+  color: var(--text);
+}
+.copy {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px;
+  min-width: 150px;
+  padding: 8px 18px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--brand-grad);
+  color: #fff;
+  font-weight: 700; font-size: 15px;
+  cursor: pointer;
+  transition: transform .12s ease, filter .15s ease, background .2s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.copy:hover { filter: brightness(1.06); }
+.copy:active { transform: scale(.98); }
+.copy:focus-visible { outline: none; box-shadow: var(--ring); }
+.copy svg { width: 18px; height: 18px; flex: none; }
+.copy .ic-ok { display: none; }
+.copy.done { background: var(--ok); }
+.copy.done .ic-copy { display: none; }
+.copy.done .ic-ok { display: inline; }
+
+.hint {
+  display: flex; align-items: flex-start; gap: 8px;
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--ok-soft);
+  color: var(--text);
+  font-size: 15px; font-weight: 600;
+  text-align: right;
+}
+.hint svg { width: 20px; height: 20px; flex: none; margin-top: 2px; color: var(--ok); }
+.sub { margin: 8px 2px 0; color: var(--muted); font-size: 14px; text-align: right; }
+
+/* ---------- stores ---------- */
+.stores { display: grid; gap: 10px; margin: 18px 0 0; }
+html[data-platform="desktop"] .stores { grid-template-columns: 1fr; }
+@media (min-width: 400px) { html[data-platform="desktop"] .stores { grid-template-columns: 1fr 1fr; } }
+.store {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  min-height: 58px;
+  padding: 8px 18px;
+  border-radius: 16px;
+  background: var(--store-bg);
+  color: var(--store-ink);
+  text-decoration: none;
+  transition: transform .12s ease, background .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.store:hover { background: var(--store-bg-hover); }
+.store:active { transform: scale(.985); }
+.store:focus-visible { outline: none; box-shadow: var(--ring); }
+.store svg { width: 26px; height: 26px; flex: none; }
+.store-tx { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.15; text-align: right; }
+.store-tx small { font-size: 12px; opacity: .8; }
+.store-tx b { font-size: 18px; font-weight: 700; direction: ltr; unicode-bidi: isolate; letter-spacing: .01em; }
+
+.redirect { margin: 14px 0 0; }
+.bar { height: 4px; border-radius: 4px; overflow: hidden; background: var(--soft); }
+.bar span { display: block; height: 100%; width: 0; background: var(--brand-grad); border-radius: 4px; }
+.redirect.run .bar span { animation: fill 1.2s linear forwards; }
+@keyframes fill { to { width: 100%; } }
+.redirect-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 8px; color: var(--muted); font-size: 14px; }
+.linkbtn {
+  border: 0; background: none; padding: 6px 4px; margin: 0;
+  color: var(--accent); font-weight: 600; font-size: 14px;
+  text-decoration: underline; text-underline-offset: 3px; cursor: pointer;
+}
+.linkbtn:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 6px; }
+
+.alt { margin: 12px 0 0; color: var(--muted); font-size: 14px; }
+.alt a { font-weight: 600; text-underline-offset: 3px; }
+.note { margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+
+/* ---------- steps ---------- */
+.steps {
+  list-style: none;
+  margin: 20px 0 0; padding: 16px 0 0;
+  border-top: 1px solid var(--card-border);
+  text-align: right;
+  counter-reset: s;
+  display: grid; gap: 10px;
+}
+.steps li { position: relative; padding-right: 38px; font-size: 15px; min-height: 28px; }
+.steps li::before {
+  counter-increment: s;
+  content: counter(s);
+  position: absolute; right: 0; top: 0;
+  width: 28px; height: 28px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--accent-ink);
+  font-weight: 800; font-size: 14px;
+}
+.k { white-space: nowrap; }
+.steps .k { font-weight: 700; }
+
+.foot { text-align: center; color: var(--muted); font-size: 13px; }
+.foot a { color: inherit; text-underline-offset: 3px; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .card { animation: none; }
+  .redirect.run .bar span { animation: none; width: 100%; }
+  .copy, .store { transition: none; }
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header class="hero">
+    <div class="logo-ring"><img class="logo" src="data:image/webp;base64,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" width="88" height="88" alt="شعار مجتهد"></div>
+    <p class="brand">مجتهد</p>
+    <p class="tagline">منصة التعلم والمسابقات التفاعلية</p>
+  </header>
+
+  <section class="card" aria-labelledby="title">
+    <p class="pill" id="invite-pill" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9"/><path d="M2 7h20v5H2z"/><path d="M12 21V7"/><path d="M12 7H7.5a2.5 2.5 0 1 1 0-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 1 0 0-5C13 2 12 7 12 7z"/></svg>
+      دعوة من شريك مجتهد
+    </p>
+    <h1 id="title">حمّل تطبيق مجتهد</h1>
+    <p class="lead" id="lead">تعلّم ونافس في مسابقات تفاعلية ممتعة. حمّل التطبيق من متجرك وابدأ الآن.</p>
+
+    <div class="code-box" id="code-box" hidden>
+      <span class="code-label" id="code-label">كود المسوّق</span>
+      <span class="code" id="code" dir="ltr" aria-describedby="code-label"></span>
+      <button type="button" class="copy" id="copy-btn">
+        <svg class="ic-copy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        <svg class="ic-ok" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+        <span id="copy-label">نسخ الكود</span>
+      </button>
+    </div>
+
+    <p class="hint" id="hint" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <span>افتح التطبيق واكتب الكود في خانة <span class="k">«كود المسوّق»</span></span>
+    </p>
+    <p class="sub" id="hint-platform" hidden></p>
+
+    <div class="stores" id="stores">
+      <a class="store" id="btn-play" href="https://play.google.com/store/apps/details?id=com.mazen.flutterquiz" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M5.2 2.4c-.5-.3-1.2.1-1.2.7v17.8c0 .6.7 1 1.2.7l15.4-8.9c.5-.3.5-1.1 0-1.4L5.2 2.4zm1.3 3.3 7.6 6.3-7.6 6.3V5.7z" fill-rule="evenodd"/></svg>
+        <span class="store-tx"><small>حمّله من</small><b>Google Play</b></span>
+      </a>
+      <a class="store" id="btn-ios" href="https://apps.apple.com/app/id6605936809" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" aria-hidden="true"><path d="M13.6 4.3 6.4 16.7"/><path d="M10.4 4.3l7.2 12.4"/><path d="M4.4 13.4h10.2"/><path d="M17.1 13.4h2.5"/><path d="M5.6 18.6 4.8 20"/></svg>
+        <span class="store-tx"><small>حمّله من</small><b>App Store</b></span>
+      </a>
+    </div>
+
+    <div class="redirect" id="redirect" hidden>
+      <div class="bar"><span id="redirect-bar"></span></div>
+      <div class="redirect-row">
+        <span id="redirect-text">جارٍ فتح Google&nbsp;Play…</span>
+        <button type="button" class="linkbtn" id="redirect-cancel">البقاء هنا</button>
+      </div>
+    </div>
+
+    <p class="alt" id="alt-store" hidden><span id="alt-q"></span> <a id="alt-link" href="#" rel="noopener"></a></p>
+    <p class="note" id="desktop-note" hidden>افتح هذا الرابط من جوالك لتثبيت التطبيق مباشرة.</p>
+    <p class="note" id="invalid-note" hidden>لم نتعرّف على كود في هذا الرابط. حمّل التطبيق، وإن كان لديك كود مسوّق فاكتبه داخل التطبيق.</p>
+
+    <ol class="steps" id="steps" hidden>
+      <li>حمّل تطبيق مجتهد من المتجر.</li>
+      <li>افتح التطبيق وأنشئ حسابك أو سجّل دخولك.</li>
+      <li>اكتب الكود في خانة <span class="k">«كود المسوّق»</span>.</li>
+    </ol>
+
+    <noscript><p class="note">لعرض كود الدعوة فعّل JavaScript، أو حمّل التطبيق من الأزرار أعلاه واكتب الكود في خانة «كود المسوّق».</p></noscript>
+  </section>
+
+  <footer class="foot"><a href="https://mujtahidacademy.com/">mujtahidacademy.com</a></footer>
+  <p class="sr" id="sr-status" role="status" aria-live="polite"></p>
+</main>
+
+<script id="mj-core">
+/* Pure helpers (no DOM). Tested by landing/test/check.mjs — keep ES5. */
+window.MJ = (function () {
+  'use strict';
+  var RAW_RE = /^[A-Za-z0-9]{3,24}$/;
+  var CODE_RE = /^[A-Z0-9]{3,24}$/;
+  /* Only gates the Android auto-redirect. Deliberately narrower than the click
+     function's ua_class list (which the server applies on its own): a bare
+     "bot" would match real phone models such as "CUBOT P50". Crawler tokens
+     are matched as "<name>bot/<version>" or by explicit name instead. */
+  var REDIRECT_BOT_RE = /WhatsApp|TelegramBot|facebookexternalhit|Facebot|Twitterbot|Slackbot|Discordbot|AdsBot|DuckDuckBot|bot\/\d|crawler|spider|preview|HeadlessChrome|Lighthouse/i;
+  var STORE_KEY = 'mj_aff_code';
+  var REDIRECT_KEY = 'mj_aff_redirected';
+  function noop() {}
+  function trim(s) { return String(s).replace(/^\s+|\s+$/g, ''); }
+
+  /* Raw value -> upper-case code, or null. Validates BEFORE upper-casing so
+     non-ASCII letters that upper-case to ASCII (e.g. dotless i) are rejected. */
+  function normalizeCode(v) {
+    if (v === null || v === undefined) return null;
+    var s = trim(v);
+    return RAW_RE.test(s) ? s.toUpperCase() : null;
+  }
+  function isValidCode(c) { return typeof c === 'string' && CODE_RE.test(c); }
+
+  /* ".../i/<CODE>" or ".../i/<CODE>/" -> "<CODE>" (decoded), else null. */
+  function codeFromPath(pathname) {
+    var m = /\/i\/([^\/?#]+)\/?$/.exec(String(pathname || ''));
+    if (!m) return null;
+    var seg = m[1];
+    try { seg = decodeURIComponent(seg); } catch (e) {}
+    if (/^index\.html?$/i.test(seg)) return null;
+    return seg;
+  }
+
+  /* "?c=<CODE>" -> "<CODE>" (decoded), else null. The value stops at a second
+     "?" (or "#"): a marketer who tags the link with "?utm_source=..." instead
+     of "&utm_source=..." still gets the click. One trailing "/" is dropped,
+     the same slack codeFromPath gives "/i/<CODE>/". Both only ever cut a
+     non-empty prefix, which normalizeCode then checks as usual — "?c=?x",
+     "?c=/" and "?c=AB/CD" stay invalid. */
+  function codeFromQuery(search) {
+    var q = String(search || '').replace(/^\?/, '');
+    if (!q) return null;
+    var parts = q.split('&');
+    for (var i = 0; i < parts.length; i++) {
+      var eq = parts[i].indexOf('=');
+      var k = eq < 0 ? parts[i] : parts[i].slice(0, eq);
+      if (k === 'c' || k === 'C') {
+        var v = eq < 0 ? '' : parts[i].slice(eq + 1);
+        try { v = decodeURIComponent(v.replace(/\+/g, ' ')); } catch (e) {}
+        return v.replace(/^([^?#]+)[?#][\s\S]*$/, '$1').replace(/^([\s\S]+)\/$/, '$1');
+      }
+    }
+    return null;
+  }
+
+  /* Path wins over ?c=. raw = whatever non-empty candidate was present
+     (lets the page tell "invalid code" apart from "no code"). */
+  function parseCode(pathname, search) {
+    var p = codeFromPath(pathname);
+    var q = codeFromQuery(search);
+    var cp = normalizeCode(p);
+    if (cp) return { code: cp, raw: p, from: 'path' };
+    var cq = normalizeCode(q);
+    if (cq) return { code: cq, raw: q, from: 'query' };
+    var raw = (p !== null && trim(p)) ? p : (q !== null && trim(q)) ? q : null;
+    return { code: null, raw: raw, from: null };
+  }
+
+  function buildPlayReferrer(code) {
+    return 'aff_code=' + code + '&utm_source=affiliate&utm_medium=link&utm_campaign=' + code;
+  }
+  function buildPlayUrl(pkg, code) {
+    var u = 'https://play.google.com/store/apps/details?id=' + encodeURIComponent(pkg);
+    if (isValidCode(code)) u += '&referrer=' + encodeURIComponent(buildPlayReferrer(code));
+    return u;
+  }
+  function buildAppStoreUrl(appId) {
+    return 'https://apps.apple.com/app/id' + encodeURIComponent(String(appId));
+  }
+
+  /* 'android' | 'ios' | 'desktop'. iPadOS 13+ Safari reports a Mac UA; the
+     touch-point count tells it apart from a real Mac. */
+  function detectPlatform(ua, maxTouchPoints) {
+    ua = String(ua || '');
+    if (/android/i.test(ua)) return 'android';
+    if (/iPhone|iPad|iPod/i.test(ua)) return 'ios';
+    if (/Macintosh/i.test(ua) && (+maxTouchPoints || 0) > 1) return 'ios';
+    return 'desktop';
+  }
+  /* Crawlers that run JS (Googlebot, bingbot, headless tools) must not be
+     auto-sent to Play. Link-preview bots never run JS anyway. */
+  function isLikelyBot(ua) { return REDIRECT_BOT_RE.test(String(ua || '')); }
+
+  /* Inside an <iframe> on some other site: no click, no auto-redirect. */
+  function isFramed(win) {
+    try { return !!win && win.top !== undefined && win.top !== win.self; } catch (e) { return true; }
+  }
+
+  function clickEndpoint(base) {
+    var b = trim(base || '');
+    if (!b || /[<>\s]/.test(b) || !/^https?:\/\//i.test(b)) return null;
+    return b.replace(/\/+$/, '') + '/click';
+  }
+
+  /* Fire-and-forget, exactly ONE request, never awaited, never throws.
+     It is a CORS "simple" request: POST, no custom headers, a string body
+     (sent as text/plain), so there is no preflight, and because it is a POST
+     the browser always attaches the Origin header. That keeps the click
+     function's ALLOWED_ORIGINS check in force: the same script copied onto
+     another site is answered 204 and not logged. The code goes in both the
+     JSON body and ?c= (the function accepts either). No GET or image-beacon
+     fallback: those carry no Origin. Without fetch (very old browsers) it
+     uses navigator.sendBeacon, which is also a POST with Origin. */
+  function sendClick(env, base, code) {
+    var url = clickEndpoint(base);
+    if (!url || !isValidCode(code) || !env) return false;
+    var target = url + '?c=' + encodeURIComponent(code);
+    var body = JSON.stringify({ code: code });
+    function beacon() {
+      try {
+        var n = env.navigator;
+        if (n && typeof n.sendBeacon === 'function') return !!n.sendBeacon(target, body);
+      } catch (e) {}
+      return false;
+    }
+    if (typeof env.fetch !== 'function') return beacon();
+    try {
+      var p = env.fetch(target, {
+        method: 'POST', mode: 'cors', keepalive: true, credentials: 'omit', cache: 'no-store',
+        body: body
+      });
+      if (p && typeof p.then === 'function') p.then(noop, noop);
+      return true;
+    } catch (e) { return beacon(); }
+  }
+
+  function writeStoredCode(storage, code, now) {
+    if (!storage || !isValidCode(code)) return false;
+    try { storage.setItem(STORE_KEY, JSON.stringify({ c: code, t: +now || 0 })); return true; } catch (e) { return false; }
+  }
+  function readStoredCode(storage, now, maxAgeMs) {
+    if (!storage) return null;
+    try {
+      var raw = storage.getItem(STORE_KEY);
+      if (!raw) return null;
+      var o = JSON.parse(raw);
+      if (!o || !isValidCode(o.c)) return null;
+      if (maxAgeMs > 0 && (!(o.t > 0) || now - o.t > maxAgeMs || o.t - now > 864e5)) return null;
+      return o.c;
+    } catch (e) { return null; }
+  }
+  function wasRedirected(storage, code) {
+    if (!storage) return false;
+    try { return storage.getItem(REDIRECT_KEY) === code; } catch (e) { return false; }
+  }
+  function markRedirected(storage, code) {
+    if (!storage) return false;
+    try { storage.setItem(REDIRECT_KEY, code); return true; } catch (e) { return false; }
+  }
+  /* Auto-open Play only for a fresh link visit on Android, once per tab session. */
+  function shouldAutoRedirect(o) {
+    return !!(o && o.platform === 'android' && o.source === 'url' && isValidCode(o.code) && !o.bot && !o.already);
+  }
+
+  return {
+    STORE_KEY: STORE_KEY, REDIRECT_KEY: REDIRECT_KEY,
+    normalizeCode: normalizeCode, isValidCode: isValidCode,
+    codeFromPath: codeFromPath, codeFromQuery: codeFromQuery, parseCode: parseCode,
+    buildPlayReferrer: buildPlayReferrer, buildPlayUrl: buildPlayUrl, buildAppStoreUrl: buildAppStoreUrl,
+    detectPlatform: detectPlatform, isLikelyBot: isLikelyBot, isFramed: isFramed,
+    clickEndpoint: clickEndpoint, sendClick: sendClick,
+    writeStoredCode: writeStoredCode, readStoredCode: readStoredCode,
+    wasRedirected: wasRedirected, markRedirected: markRedirected,
+    shouldAutoRedirect: shouldAutoRedirect
+  };
+})();
+</script>
+
+<script id="mj-app">
+(function () {
+  'use strict';
+  var C = window.MJ_CONFIG || {};
+  var M = window.MJ;
+  var doc = document;
+  var nav = window.navigator || {};
+  var loc = window.location;
+  function $(id) { return doc.getElementById(id); }
+  function show(el, on) { if (el) el.hidden = !on; }
+  function storage(name) {
+    try {
+      var s = window[name];
+      if (!s) return null;
+      s.setItem('__mj_t', '1'); s.removeItem('__mj_t');
+      return s;
+    } catch (e) { return null; }
+  }
+
+  var ls = storage('localStorage');
+  var ss = storage('sessionStorage');
+  var ua = String(nav.userAgent || '');
+  var platform = M.detectPlatform(ua, nav.maxTouchPoints);
+  var bot = M.isLikelyBot(ua);
+  var framed = M.isFramed(window);
+  var parsed = M.parseCode(loc.pathname, loc.search);
+  var code = parsed.code;
+  var source = code ? 'url' : null;
+  var now = new Date().getTime();
+
+  if (code) {
+    M.writeStoredCode(ls, code, now);
+  } else if (!parsed.raw) {
+    var stored = M.readStoredCode(ls, now, (+C.rememberDays || 30) * 864e5);
+    if (stored) { code = stored; source = 'stored'; }
+  }
+
+  /* 1) click — first, before any rendering; never awaited. Not when framed
+     (a hidden iframe elsewhere would otherwise log clicks as this origin). */
+  if (source === 'url' && !framed) { try { M.sendClick(window, C.functionsBase, code); } catch (e) {} }
+
+  /* 2) store links */
+  var playUrl = M.buildPlayUrl(C.androidPackage || 'com.mazen.flutterquiz', code);
+  var iosUrl = M.buildAppStoreUrl(C.iosAppId || '6605936809');
+  var root = doc.documentElement;
+  root.setAttribute('data-platform', platform);
+  root.setAttribute('data-code', code ? 'yes' : 'no');
+
+  var btnPlay = $('btn-play');
+  var btnIos = $('btn-ios');
+  btnPlay.setAttribute('href', playUrl);
+  btnIos.setAttribute('href', iosUrl);
+  show(btnPlay, platform !== 'ios');
+  show(btnIos, platform !== 'android');
+
+  if (platform !== 'desktop') {
+    var altLink = $('alt-link');
+    $('alt-q').textContent = platform === 'android' ? 'تستخدم iPhone؟' : 'تستخدم أندرويد؟';
+    altLink.textContent = platform === 'android' ? 'حمّله من App Store' : 'حمّله من Google Play';
+    altLink.setAttribute('href', platform === 'android' ? iosUrl : playUrl);
+    show($('alt-store'), true);
+  } else {
+    show($('desktop-note'), true);
+  }
+
+  /* 3) code card */
+  var status = $('sr-status');
+  function announce(t) { if (status) { status.textContent = ''; status.textContent = t; } }
+
+  if (code) {
+    $('code').textContent = code;
+    $('title').textContent = 'تمت دعوتك إلى مجتهد';
+    $('lead').textContent = 'حمّل التطبيق وفعّل دعوتك بكود المسوّق التالي:';
+    show($('invite-pill'), true);
+    show($('code-box'), true);
+    show($('hint'), true);
+    show($('steps'), true);
+    var hp = $('hint-platform');
+    if (platform === 'ios') {
+      hp.textContent = 'على iPhone لا يصل الكود إلى التطبيق تلقائياً: انسخه الآن، ثم اكتبه بعد تثبيت التطبيق.';
+      show(hp, true);
+    } else if (platform === 'android') {
+      hp.textContent = 'على أندرويد يصل الكود تلقائياً عادةً عند التثبيت من Google\u00a0Play، وإن لم يظهر لك فاكتبه بنفسك.';
+      show(hp, true);
+    }
+  } else if (parsed.raw) {
+    show($('invalid-note'), true);
+  }
+
+  /* 4) Android auto-redirect (cancellable, once per tab session) */
+  var redirectBox = $('redirect');
+  var redirectTimer = null;
+  function cancelRedirect() {
+    if (redirectTimer === null) return;
+    clearTimeout(redirectTimer);
+    redirectTimer = null;
+    show(redirectBox, false);
+    announce('تم إيقاف التحويل التلقائي.');
+  }
+  if (!framed && M.shouldAutoRedirect({ platform: platform, source: source, code: code, bot: bot, already: M.wasRedirected(ss, code) })) {
+    M.markRedirected(ss, code);
+    var delay = Math.max(0, +C.androidRedirectDelayMs || 1200);
+    $('redirect-bar').style.animationDuration = delay + 'ms';
+    show(redirectBox, true);
+    redirectBox.classList.add('run');
+    $('redirect-cancel').addEventListener('click', cancelRedirect);
+    redirectTimer = setTimeout(function () {
+      redirectTimer = null;
+      show($('redirect-cancel'), false);
+      $('redirect-text').textContent = 'إن لم يُفتح المتجر تلقائياً فاضغط زر Google\u00a0Play.';
+      try { loc.href = playUrl; } catch (e) {}
+    }, delay);
+  }
+
+  /* 5) copy button — only on an explicit tap */
+  var copyBtn = $('copy-btn');
+  var copyLabel = $('copy-label');
+  var resetTimer = null;
+  function legacyCopy(text) {
+    var ok = false;
+    try {
+      var ta = doc.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '0';
+      ta.style.opacity = '0';
+      doc.body.appendChild(ta);
+      ta.focus();
+      ta.select();
+      try { ta.setSelectionRange(0, text.length); } catch (e) {}
+      ok = !!doc.execCommand('copy');
+      doc.body.removeChild(ta);
+    } catch (e2) { ok = false; }
+    return ok;
+  }
+  function copyText(text, cb) {
+    var done = false;
+    function fin(ok) { if (!done) { done = true; cb(ok); } }
+    try {
+      if (nav.clipboard && typeof nav.clipboard.writeText === 'function' && window.isSecureContext !== false) {
+        nav.clipboard.writeText(text).then(function () { fin(true); }, function () { fin(legacyCopy(text)); });
+        return;
+      }
+    } catch (e) {}
+    fin(legacyCopy(text));
+  }
+  copyBtn.addEventListener('click', function () {
+    if (!code) return;
+    cancelRedirect();
+    copyText(code, function (ok) {
+      if (ok) copyBtn.classList.add('done'); else copyBtn.classList.remove('done');
+      copyLabel.textContent = ok ? 'تم النسخ' : 'انسخه يدوياً';
+      announce(ok ? 'تم نسخ الكود ' + code : 'تعذّر النسخ، اضغط مطولاً على الكود لنسخه.');
+      if (resetTimer !== null) clearTimeout(resetTimer);
+      resetTimer = setTimeout(function () {
+        copyBtn.classList.remove('done');
+        copyLabel.textContent = 'نسخ الكود';
+      }, 2400);
+    });
+  });
+})();
+</script>
+</body>
+</html>

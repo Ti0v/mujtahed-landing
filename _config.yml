@@ -1,0 +1,6 @@
+# GitHub Pages (Jekyll) skips folders that start with "_" by default.
+# The partners portal (/partners/) is a static Next.js export whose scripts
+# live in partners/_next — include it so it is published as-is.
+include:
+  - _next
+  - _not-found
