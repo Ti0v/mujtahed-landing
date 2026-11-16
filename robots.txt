@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Sitemap: https://mujtahidacademy.com/sitemap.xml
+Sitemap: https://mujtahidacademy.com/sitemaps/index.xml
 
 # محاكي قياس - تحسين للـ Googlebot
 User-agent: Googlebot
