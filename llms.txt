@@ -11,6 +11,7 @@ Mujtahid is a free Saudi platform for practising the national standardized tests
 ## التدريب
 - [اختبار قدرات تجريبي](https://mujtahidacademy.com/qudrat.html)
 - [القدرات الكمي](https://mujtahidacademy.com/qudrat-kemi.html)
+- [قوانين القدرات الكمي](https://mujtahidacademy.com/qudrat-kemi-laws.html): 106 قوانين في 11 باباً، لكل قانون شرح وأسئلة تدريبية بحلولها.
 - [القدرات اللفظي](https://mujtahidacademy.com/qudrat-lafzi.html)
 - [محاكي التحصيلي](https://mujtahidacademy.com/tahsili.html)
 - [محاكي STEP](https://mujtahidacademy.com/step.html)
