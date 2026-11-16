@@ -1,0 +1,31 @@
+# مجتهد (Mujtahid)
+
+> مجتهد منصة سعودية مجانية للتدريب على اختبارات هيئة تقويم التعليم والتدريب (قياس): اختبار القدرات العامة، والاختبار التحصيلي، واختبار STEP. تتوفر كتطبيق جوال (iOS وAndroid) وموقع ويب، مع بنك أسئلة محلول وحاسبة للنسبة الموزونة.
+
+Mujtahid is a free Saudi platform for practising the national standardized tests (Qiyas): General Aptitude (Qudrat), Achievement (Tahsili) and STEP English. It offers a mobile app, a web app, a public bank of 20,000+ solved questions, and a weighted-score (al-nisba al-mawzuna) calculator for Saudi university admission.
+
+## أدوات مجانية
+- [حاسبة النسبة الموزونة](https://mujtahidacademy.com/tools/weighted-score-calculator.html): تحسب النسبة الموزونة للقبول الجامعي من الثانوية والقدرات والتحصيلي وSTEP، وتحسب الدرجة المطلوبة للوصول لنسبة معيّنة.
+- [بنك الأسئلة](https://mujtahidacademy.com/topics): أكثر من 20 ألف سؤال قدرات وتحصيلي محلول، مرتب حسب الأقسام، مع الإجابة الصحيحة.
+
+## التدريب
+- [اختبار قدرات تجريبي](https://mujtahidacademy.com/qudrat.html)
+- [القدرات الكمي](https://mujtahidacademy.com/qudrat-kemi.html)
+- [القدرات اللفظي](https://mujtahidacademy.com/qudrat-lafzi.html)
+- [محاكي التحصيلي](https://mujtahidacademy.com/tahsili.html)
+- [محاكي STEP](https://mujtahidacademy.com/step.html)
+- [منصة التدريب على الويب](https://app.mujtahidacademy.com/)
+
+## أدلة
+- [المدونة](https://mujtahidacademy.com/blog/index.html): أدلة التحضير لاختبارات قياس ومواعيدها.
+- [كيف تحسب نسبتك الموزونة](https://mujtahidacademy.com/blog/articles/qudrat-score-calculator.html)
+- [دليل التحضير للقدرات](https://mujtahidacademy.com/blog/articles/qudrat-preparation-guide.html)
+- [دليل التحضير للتحصيلي](https://mujtahidacademy.com/blog/articles/tahsili-preparation-guide.html)
+
+## التطبيق
+- [App Store](https://apps.apple.com/sa/app/id6605936809)
+- [Google Play](https://play.google.com/store/apps/details?id=com.mazen.flutterquiz)
+
+## Optional
+- [سياسة الخصوصية](https://mujtahidacademy.com/privacy-policy.html)
+- [الشروط والأحكام](https://mujtahidacademy.com/terms.html)
